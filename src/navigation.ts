@@ -3,61 +3,62 @@ import { getPermalink, getBlogPermalink, getAsset } from './utils/permalinks';
 export const headerData = {
   links: [
     {
-      text: 'Homes',
+      text: 'Services',
       links: [
         {
-          text: 'SaaS',
-          href: getPermalink('/homes/saas'),
+          text: 'SEO',
+          href: getPermalink('services/seo'),
         },
         {
-          text: 'Startup',
-          href: getPermalink('/homes/startup'),
+          text: 'PPC (Google Ads)',
+          href: getPermalink('services/ppc'),
         },
         {
-          text: 'Mobile App',
-          href: getPermalink('/homes/mobile-app'),
+          text: 'Website Design & Development',
+          href: getPermalink('services/website-design-development'),
         },
         {
-          text: 'Personal',
-          href: getPermalink('/homes/personal'),
+          text: 'Content Creation',
+          href: getPermalink('services/content-creation'),
+        },
+        {
+          text: 'Social Media Management',
+          href: getPermalink('services/social-media-management'),
+        },
+        {
+          text: 'Mobile App Development',
+          href: getPermalink('services/mobile-app-development'),
+        },
+        {
+          text: 'Custom Software',
+          href: getPermalink('services/custom-software'),
         },
       ],
     },
     {
-      text: 'Pages',
+      text: 'Resources',
       links: [
         {
-          text: 'Features (Anchor Link)',
+          text: 'About Us',
           href: getPermalink('/#features'),
-        },
-        {
-          text: 'Services',
-          href: getPermalink('/services'),
         },
         {
           text: 'Pricing',
           href: getPermalink('/pricing'),
         },
         {
-          text: 'About us',
-          href: getPermalink('/about'),
-        },
-        {
-          text: 'Contact',
-          href: getPermalink('/contact'),
-        },
-        {
-          text: 'Terms',
-          href: getPermalink('/terms'),
-        },
-        {
-          text: 'Privacy policy',
-          href: getPermalink('/privacy'),
+          text: 'Reviews',
+          href: getPermalink('/services'),
         },
       ],
     },
     {
-      text: 'Landing',
+      text: 'Case Studies',
+      href: '#',
+    },
+    /*
+    {
+      text: 'Landing Pages',
       links: [
         {
           text: 'Lead Generation',
@@ -85,6 +86,7 @@ export const headerData = {
         },
       ],
     },
+    */
     {
       text: 'Blog',
       links: [
@@ -109,10 +111,6 @@ export const headerData = {
           href: getPermalink('astro', 'tag'),
         },
       ],
-    },
-    {
-      text: 'Widgets',
-      href: '#',
     },
   ],
   actions: [{ text: 'Download', href: 'https://github.com/onwidget/astrowind', target: '_blank' }],

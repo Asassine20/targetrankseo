@@ -1,45 +1,45 @@
 ---
 import Layout from '~/layouts/PageLayout.astro';
 import HeroText from '~/components/widgets/HeroText.astro';
-import ContactUs from '~/components/widgets/Contact.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
 import Features2 from '~/components/widgets/Features2.astro';
 
 const metadata = {
-  title: 'Contact',
+  title: 'Contact Us',
 };
 ---
 
 <Layout metadata={metadata}>
   <!-- HeroText Widget ******************* -->
 
-  <HeroText tagline="Contact" title="Let's Connect!" />
-
-  <ContactUs
-    id="form"
-    title="Drop us a message today!"
-    subtitle="For quicker answers, explore our FAQs section. You may find the solution you're looking  for right there! If not, our support team is delighted to help you."
-    inputs={[
-      {
-        type: 'text',
-        name: 'name',
-        label: 'Name',
-      },
-      {
-        type: 'email',
-        name: 'email',
-        label: 'Email',
-      },
-    ]}
-    textarea={{
-      label: 'Message',
-    }}
-    disclaimer={{
-      label:
-        'By submitting this contact form, you acknowledge and agree to the collection of your personal information.',
-    }}
-    description="Our support team typically responds within 24 business hours."
+  <HeroText
+    tagline="Contact Us"
+    title="Let’s Elevate Your Digital Presence"
+    subtitle="Whether you have a question, need a custom strategy, or want to explore our services, we’re here to help. Reach out today!"
   />
 
+  <!-- Contact Form ******************* -->
+
+  
+  <CallToAction
+  actions={[
+    {
+      variant: 'primary',
+      text: 'Get Started Now',
+      href: 'https://formspree.io/f/xrbbggda', // Assuming your form has an ID of 'contact-form'
+      target: '_self',
+      icon: 'tabler:form',
+    },
+  ]}
+>
+  <Fragment slot="title">
+    Turbocharge Your Business with<br class="block sm:hidden" /><span class="sm:whitespace-nowrap"> Target Rank SEO</span>
+  </Fragment>
+
+  <Fragment slot="subtitle">
+    Ready to take your digital presence to the next level? Fill out the form below and let’s get started! 🚀
+  </Fragment>
+</CallToAction>
   <!-- Features2 Widget ************** -->
 
   <Features2
@@ -55,24 +55,14 @@ const metadata = {
           'Chat with us for questions about purchases, customization options, licensing for commercial use, inquiries about specific template, etc.',
       },
       {
-        title: 'Technical support',
-        description:
-          'Chat with us when facing issues like template installation, problems editing difficulties, compatibility issues with software or download errors, or other technical challenges related to using the templates.',
-      },
-      {
         title: 'Phone',
-        description: '+1 (234) 567-890',
+        description: '+1 (586) 383-5131',
         icon: 'tabler:headset',
       },
       {
         title: 'Email',
-        description: 'contact@support.com',
+        description: 'contact@targetrankseo.com',
         icon: 'tabler:mail',
-      },
-      {
-        title: 'Location',
-        description: '1234 Lorem Ipsum St, 12345, Miami, EEUU',
-        icon: 'tabler:map-pin',
       },
     ]}
   />
