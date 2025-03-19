@@ -11,7 +11,7 @@ metadata:
   title:
     default: Target Rank SEO
     template: '%s — Target Rank SEO'
-  description: "Boost your brand's online presence with expert SEO, PPC, and social media marketing. Get data-driven digital strategies tailored to your business!"
+  description: "Boost your business's online presence with expert SEO, PPC, and social media marketing. Get data-driven digital strategies tailored to your business!"
   robots:
     index: true
     follow: true

@@ -12,213 +12,202 @@ const metadata = {
 ---
 
 <Layout metadata={metadata}>
-  <!-- Hero Widget ******************* -->
+<!-- Hero Widget ******************* -->
 
-  <Hero
-    tagline="Services"
-    title="Elevate your projects with our stunning templates"
-    subtitle="Explore our meticulously crafted templates tailored to various industries and purposes. From captivating presentations to functional website designs, we offer the tools you need to succeed."
-    actions={[{ variant: 'primary', target: '_blank', text: 'Start exploring', href: '/' }]}
-    image={{
-      src: 'https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80',
-      alt: 'AstroWind Hero Image',
-    }}
-  />
+<Hero
+  tagline="Services"
+  title="Transform your digital presence with our expert solutions"
+  subtitle="From SEO to custom software development, we provide tailored services to help your business grow and thrive in the digital world."
+  actions={[{ variant: 'primary', target: '_blank', text: 'Get started', href: '/' }]}
+  image={{
+    src: 'https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80',
+    alt: 'Digital Marketing Services',
+  }}
+/>
 
   <!-- Features2 Widget ************** -->
 
-  <Features2
-    title="Explore our diverse templates"
-    subtitle="Discover our selection below to streamline and elevate your projects."
-    columns={3}
-    items={[
-      {
-        title: 'Educational',
-        description:
-          'By harmonizing instructional design and visual appeal, templates streamline content creation for varied materials, expediting development and cultivating engaging educational spaces.',
-        icon: 'tabler:school',
-      },
-      {
-        title: 'Interior Design',
-        description:
-          'Crafting functional, visually appealing spaces for residential and commercial use. Templates emphasize layout, colors, and furniture setups, offering a versatile toolkit for your design vision.',
-        icon: 'tabler:home-star',
-      },
-      {
-        title: 'Photography',
-        description: `Empowering photographers, our templates facilitate captivating storytelling. With a keen focus on layout, galleries, and typography, they cater to both professionals and enthusiasts.`,
-        icon: 'tabler:photo',
-      },
-      {
-        title: 'E-commerce',
-        description:
-          'Developing engaging online stores, our E-commerce templates ensure a dynamic presence to effectively showcase products. Ideal for startups or revamps.',
-        icon: 'tabler:shopping-cart',
-      },
-      {
-        title: 'Blog',
-        description:
-          'With attention to typography, these templates empower effective content presentation for writers at any stage, ensuring visually engaging and user-friendly blogs.',
-        icon: 'tabler:article',
-      },
-      {
-        title: 'Business',
-        description:
-          'Providing polished options for effective visual communication, these templates empower both startups and established companies for a professional brand presence.',
-        icon: 'tabler:building-store',
-      },
-      {
-        title: 'Branding',
-        description:
-          'Offering pre-designed elements for a consistent brand identity, including logos and marketing materials. Ideal for new ventures or revamps.',
-        icon: 'tabler:arrow-big-up-lines',
-      },
-      {
-        title: 'Medical',
-        description: `From presentations to patient forms, these tools enhance communication effectiveness for healthcare professionals. Ideal for medical practices and research pursuits.`,
-        icon: 'tabler:vaccine',
-      },
-      {
-        title: 'Fashion Design',
-        description:
-          'With attention to detail, customization, and contemporary design, they empower designers to showcase ideas cohesively. Ideal for all levels of designers.',
-        icon: 'tabler:tie',
-      },
-    ]}
-  />
+<Features2
+title="Our Digital Marketing & Development Services"
+subtitle="We offer a wide range of services to help your business grow and succeed online."
+columns={3}
+items={[
+  {
+    title: 'SEO',
+    description:
+      'Boost your website’s visibility and organic traffic with our proven search engine optimization strategies.',
+    icon: 'tabler:search',
+  },
+  {
+    title: 'PPC',
+    description:
+      'Drive targeted traffic and maximize ROI with expertly managed pay-per-click advertising campaigns.',
+    icon: 'tabler:click',
+  },
+  {
+    title: 'Content Creation',
+    description:
+      'Engage your audience with high-quality, tailored content that resonates and converts.',
+    icon: 'tabler:writing',
+  },
+  {
+    title: 'Social Media Management',
+    description:
+      'Build and maintain a strong social media presence with strategic planning and execution.',
+    icon: 'tabler:brand-instagram',
+  },
+  {
+    title: 'Website Design & Development',
+    description:
+      'Create stunning, user-friendly websites that deliver exceptional experiences and drive results.',
+    icon: 'tabler:browser',
+  },
+  {
+    title: 'Mobile App Development',
+    description:
+      'Bring your ideas to life with custom mobile apps designed for performance and usability.',
+    icon: 'tabler:device-mobile',
+  },
+  {
+    title: 'Custom Software',
+    description:
+      'Streamline your operations with tailor-made software solutions designed to meet your unique needs.',
+    icon: 'tabler:code',
+  },
+]}
+/>
 
   <!-- Content Widget **************** -->
 
-  <Content
-    isReversed
-    items={[
-      {
-        title: 'High-Quality Designs',
-        description:
-          'Our templates feature top-tier designs that ensure a professional and polished appearance for your projects.',
-        icon: 'tabler:wand',
-      },
-      {
-        title: 'Customization Tools',
-        description:
-          'Tailor each template to your unique needs with user-friendly customization tools that let you personalize colors, fonts, and content.',
-        icon: 'tabler:settings',
-      },
-      {
-        title: 'Pre-Designed Elements',
-        description:
-          'Save time and effort with our ready-to-use elements, including graphics, icons, and layouts that enhance the visual appeal of your creations.',
-        icon: 'tabler:presentation',
-      },
-      {
-        title: 'Preview and Mockup Views',
-        description:
-          'Visualize the final outcome before making any changes using our preview and mockup views, ensuring your projects meet your expectations.',
-        icon: 'tabler:carousel-horizontal',
-      },
-    ]}
-    image={{
-      src: 'https://images.unsplash.com/photo-1525909002-1b05e0c869d8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80',
-      alt: 'Features Image',
-    }}
-  >
-    <Fragment slot="content">
-      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Main Features</h3>
-    </Fragment>
-  </Content>
+<Content
+isReversed
+items={[
+  {
+    title: 'Proven Strategies',
+    description:
+      'We use data-driven strategies to deliver measurable results, ensuring your business achieves its goals.',
+    icon: 'tabler:chart-bar',
+  },
+  {
+    title: 'Tailored Solutions',
+    description:
+      'Every business is unique. We customize our services to fit your specific needs and objectives.',
+    icon: 'tabler:tools',
+  },
+  {
+    title: 'Cutting-Edge Technology',
+    description:
+      'Stay ahead of the competition with the latest tools and technologies in digital marketing and development.',
+    icon: 'tabler:device-desktop',
+  },
+  {
+    title: 'Transparent Reporting',
+    description:
+      'We provide clear, detailed reports so you can track progress and see the impact of our work.',
+    icon: 'tabler:file-analytics',
+  },
+]}
+image={{
+  src: 'https://images.unsplash.com/photo-1525909002-1b05e0c869d8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80',
+  alt: 'Digital Marketing Features',
+}}
+>
+<Fragment slot="content">
+  <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Why Choose Us?</h3>
+</Fragment>
+</Content>
 
   <!-- Content Widget **************** -->
 
-  <Content
-    isAfterContent
-    items={[
-      {
-        title: 'Time Savings',
-        description:
-          'Streamline your workflow, enabling you to create stunning materials efficiently and allocate more time to your core tasks.',
-        icon: 'tabler:clock',
-      },
-      {
-        title: 'Professional Appearance',
-        description:
-          'Elevate your projects with the polished and sophisticated look that our templates provide, making a lasting impression on your audience.',
-        icon: 'tabler:school',
-      },
-      {
-        title: 'Cost-Efficiency',
-        description:
-          'Benefit from cost savings by avoiding the need for custom design work, as our templates offer professional-grade designs at a fraction of the cost.',
-        icon: 'tabler:coin',
-      },
-      {
-        title: 'Instant Download',
-        description:
-          'Enjoy immediate access to your chosen templates upon purchase, enabling you to begin working on your projects without delay.',
-        icon: 'tabler:file-download',
-      },
-    ]}
-    image={{
-      src: 'https://images.unsplash.com/photo-1552664688-cf412ec27db2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80',
-      alt: 'Benefits Image',
-    }}
-  >
-    <Fragment slot="content">
-      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Benefits</h3>
-    </Fragment>
-  </Content>
+<Content
+isAfterContent
+items={[
+  {
+    title: 'Increased ROI',
+    description:
+      'Our strategies are designed to maximize your return on investment, ensuring every dollar spent delivers measurable results.',
+    icon: 'tabler:growth',
+  },
+  {
+    title: 'Enhanced Online Presence',
+    description:
+      'Strengthen your brand’s visibility and credibility with a professional, optimized digital presence.',
+    icon: 'tabler:world',
+  },
+  {
+    title: 'Scalable Solutions',
+    description:
+      'Our services grow with your business, providing flexible solutions that adapt to your evolving needs.',
+    icon: 'tabler:arrows-up',
+  },
+  {
+    title: 'Expert Support',
+    description:
+      'Get access to a team of experienced professionals dedicated to helping you achieve your business goals.',
+    icon: 'tabler:headset',
+  },
+]}
+image={{
+  src: 'https://images.unsplash.com/photo-1552664688-cf412ec27db2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80',
+  alt: 'Business Benefits',
+}}
+>
+<Fragment slot="content">
+  <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">What You Gain</h3>
+</Fragment>
+</Content>
 
   <!-- Testimonials Widget *********** -->
 
-  <Testimonials
-    title="Words from real customers"
-    testimonials={[
-      {
-        testimonial: `The designs are not only visually appealing but also highly professional. The templates have saved me a significant amount of time while helping me make a lasting impression on my clients.`,
-        name: 'Emily Kennedy',
-        job: 'Front-end developer',
-        image: {
-          src: 'https://images.unsplash.com/photo-1618835962148-cf177563c6c0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=930&q=80',
-          alt: 'Emily Kennedy Image',
-        },
-      },
-      {
-        testimonial: `It beautifully showcases my work, with its clean and elegant design that lets my photographs shine. Customization was a breeze, even for a non-tech person like me. The result is a professional and immersive portfolio that's garnered numerous compliments.`,
-        name: 'Sarah Hansen',
-        job: 'Photographer',
-        image: {
-          src: 'https://images.unsplash.com/photo-1561406636-b80293969660?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80',
-          alt: 'Sarah Hansen Image',
-        },
-      },
-      {
-        testimonial: `I discovered these templates and I'm impressed by their variety and quality. They've helped me establish a consistent brand image across my marketing and social platforms, elevating my business's overall appearance.`,
-        name: 'Mark Wilkinson',
-        job: 'Small business owner',
-        image: {
-          src: 'https://images.unsplash.com/photo-1545167622-3a6ac756afa4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=824&q=80',
-          alt: 'Mark Wilkinson Image',
-        },
-      },
-    ]}
-    callToAction={{
-      target: '_blank',
-      text: 'More testimonials...',
-      href: 'https://github.com/onwidget/astrowind',
-      icon: 'tabler:chevron-right',
-    }}
-  />
+<Testimonials
+title="What Our Clients Say"
+testimonials={[
+  {
+    testimonial: `Working with Target Rank SEO has been a game-changer for our online presence. Their SEO strategies have significantly boosted our organic traffic, and their team is always responsive and professional.`,
+    name: 'Rena Shamoon',
+    job: 'Rochester Beauty Bar Medspa Owner',
+    image: {
+      src: 'https://khnxrwqpws.ufs.sh/f/ZfzyDSYoDactMtJwxcIWLOKpy3HmqakQns5l6iJz4D8GuheX',
+      alt: 'Rena Shamoon Image',
+    },
+  },
+  {
+    testimonial: `The custom website they designed for us is stunning and user-friendly. It has helped us convert more leads into customers, and their ongoing support has been invaluable. Highly recommend their services!`,
+    name: 'Emmanuel Yousif',
+    job: 'AEY Packaging Owner',
+    image: {
+      src: 'https://khnxrwqpws.ufs.sh/f/ZfzyDSYoDactx6PVLihe3nrWOSw576bIa9MCV420UY1ANuTF',
+      alt: 'Emmanuel Yousif Image',
+    },
+  },
+  {
+    testimonial: `Their social media management has transformed our online engagement. Our followers have grown exponentially, and the content they create is always on-brand and impactful. Truly a top-notch team!`,
+    name: 'Andrew Sassine',
+    job: 'GemTCG Owner',
+    image: {
+      src: 'https://khnxrwqpws.ufs.sh/f/ZfzyDSYoDacthNEMsbeGkyBRe0c2TPpVJUnOFQ3ICbaAL5Yo',
+      alt: 'Andrew Sassine Image',
+    },
+  },
+]}
+callToAction={{
+  target: '_blank',
+  text: 'Read more testimonials...',
+  href: '/testimonials',
+  icon: 'tabler:chevron-right',
+}}
+/>
 
-  <!-- CallToAction Widget *********** -->
+<!-- CallToAction Widget *********** -->
 
-  <CallToAction
-    actions={[
-      {
-        variant: 'primary',
-        text: 'Start exploring',
-        href: '/',
-      },
-    ]}
-    title="Dive into our template collection"
-    subtitle="Whether you're in business, design, or education, our templates are here to elevate your projects."
-  />
+<CallToAction
+  actions={[
+    {
+      variant: 'primary',
+      text: 'Get Started',
+    },
+  ]}
+  title="Ready to Transform Your Business?"
+  subtitle="Let’s work together to create a digital strategy that drives results. Contact us today to get started!"
+/>
 </Layout>

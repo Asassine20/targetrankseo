@@ -40,15 +40,15 @@ export const headerData = {
       links: [
         {
           text: 'About Us',
-          href: getPermalink('/#features'),
+          href: getPermalink('/about-us'),
         },
         {
           text: 'Pricing',
           href: getPermalink('/pricing'),
         },
         {
-          text: 'Reviews',
-          href: getPermalink('/services'),
+          text: 'Testimonials',
+          href: getPermalink('/testimonials'),
         },
       ],
     },
@@ -121,24 +121,24 @@ export const footerData = {
     {
       title: 'Services',
       links: [
-        { text: 'SEO', href: '#' },
-        { text: 'PPC (Google Ads)', href: '#' },
-        { text: 'Website Design & Development', href: '#' },
-        { text: 'Content Creation', href: '#' },
-        { text: 'Social Media Management', href: '#' },
-        { text: 'Mobile App Development', href: '#' },
-        { text: 'Custom Software', href: '#' },
+        { text: 'SEO', href: '/seo' },
+        { text: 'PPC (Google Ads)', href: '/ppc' },
+        { text: 'Website Design & Development', href: '/website-design-development' },
+        { text: 'Content Creation', href: '/content-creation' },
+        { text: 'Social Media Management', href: '/social-media-management' },
+        { text: 'Mobile App Development', href: '/mobile-app-development' },
+        { text: 'Custom Software', href: '/custom-software' },
       ],
     },
 
     {
       title: 'Company',
       links: [
-        { text: 'About Us', href: '#' },
-        { text: 'Blog', href: '#' },
-        { text: 'Pricing', href: '#' },
-        { text: 'Reviews', href: '#' },
-        { text: 'Case Studies', href: '#' },
+        { text: 'About Us', href: '/about-us' },
+        { text: 'Blog', href: '/blog' },
+        { text: 'Pricing', href: '/pricing' },
+        { text: 'Testimonials', href: '/testimonials' },
+        { text: 'Case Studies', href: '/case-studies' },
       ],
     },
   ],
@@ -147,10 +147,9 @@ export const footerData = {
     { text: 'Privacy Policy', href: getPermalink('/privacy') },
   ],
   socialLinks: [
-    { ariaLabel: 'X', icon: 'tabler:brand-x', href: '#' },
-    { ariaLabel: 'Instagram', icon: 'tabler:brand-instagram', href: '#' },
-    { ariaLabel: 'Facebook', icon: 'tabler:brand-facebook', href: '#' },
-    { ariaLabel: 'Github', icon: 'tabler:brand-github', href: 'https://github.com/onwidget/astrowind' },
+    { ariaLabel: 'Instagram', icon: 'tabler:brand-instagram', href: 'https://www.instagram.com/targetrankseo/' },
+    { ariaLabel: 'Facebook', icon: 'tabler:brand-facebook', href: 'https://www.facebook.com/profile.php?id=61573018960763' },
+    { ariaLabel: 'TikTok', icon: 'tabler:brand-tiktok', href: 'https://www.tiktok.com/@targetrankseo' },
   ],
   footNote: `
  All rights reserved.

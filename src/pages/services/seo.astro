@@ -1,0 +1,278 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+
+import Header from '~/components/widgets/Header.astro';
+
+import Hero2 from '~/components/widgets/Hero2.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+import Features3 from '~/components/widgets/Features3.astro';
+import Content from '~/components/widgets/Content.astro';
+import Testimonials from '~/components/widgets/Testimonials.astro';
+import FAQs from '~/components/widgets/FAQs.astro';
+import Stats from '~/components/widgets/Stats.astro';
+
+import Button from '~/components/ui/Button.astro';
+import Image from '~/components/common/Image.astro';
+
+const appStoreImg = '~/assets/images/app-store.png';
+const appStoreDownloadLink = 'https://github.com/onwidget/astrowind';
+
+const googlePlayImg = '~/assets/images/google-play.png';
+const googlePlayDownloadLink = 'https://github.com/onwidget/astrowind';
+
+const metadata = {
+  title: 'SEO',
+};
+---
+
+<Layout metadata={metadata}>
+  <Fragment slot="header">
+    <Header
+      position="left"
+      links={[
+        { text: 'Services', href: '#' },
+        { text: 'Features', href: '#' },
+        { text: 'About', href: '#' },
+      ]}
+      actions={[
+        {
+          text: 'Download',
+          href: '#download',
+        },
+      ]}
+      isSticky
+      showToggleTheme
+    />
+  </Fragment>
+
+  <!-- Hero2 Widget ******************* -->
+
+  <Hero2
+  tagline="SEO Services"
+  image={{
+    src: 'https://images.unsplash.com/photo-1535303311164-664fc9ec6532?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=987&q=80',
+    alt: 'SEO Hero Image',
+  }}
+>
+  <Fragment slot="title">
+    <span class="text-accent dark:text-white highlight">Boost Your Visibility</span>: <br /> Dominate Search Engines <span
+      class="hidden xl:inline">with Expert SEO</span>
+  </Fragment>
+
+  <Fragment slot="subtitle">
+    <span class="hidden sm:inline">
+      Unlock the full potential of your website with our proven SEO strategies.
+    </span>
+    Drive more traffic, generate leads, and grow your business with our tailored solutions.
+  </Fragment>
+
+  <div slot="actions" class="flex max-w-sm gap-4">
+    <Button variant="primary" href="/contact">
+      Get Started
+    </Button>
+
+    <Button variant="secondary" href="/services">
+      Learn More
+    </Button>
+  </div>
+</Hero2>
+
+<!-- Features3 Widget ************** -->
+
+<Features3
+  id="features"
+  title="How We Optimize Your Website"
+  subtitle="Our SEO process is designed to deliver measurable results, helping your website rank higher, attract more visitors, and convert them into customers. Here’s how we do it:"
+  tagline="Our SEO Process"
+  columns={2}
+  items={[
+    {
+      title: 'Comprehensive SEO Audit',
+      description: `We start by analyzing your website’s current performance, identifying strengths, weaknesses, and opportunities for improvement.`,
+      icon: 'tabler:search',
+    },
+    {
+      title: 'Keyword Research & Strategy',
+      description:
+        'We identify the most relevant and high-performing keywords for your industry to target in your content and campaigns.',
+      icon: 'tabler:key',
+    },
+    {
+      title: 'On-Page Optimization',
+      description: 'We optimize your website’s structure, meta tags, headings, and content to improve search engine visibility.',
+      icon: 'tabler:file-text',
+    },
+    {
+      title: 'Technical SEO Enhancements',
+      description: `We address technical issues like site speed, mobile-friendliness, and crawlability to ensure your website meets search engine standards.`,
+      icon: 'tabler:settings',
+    },
+  ]}
+  image={{
+    src: 'https://images.unsplash.com/photo-1521517407911-565264e7d82d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80',
+    alt: 'SEO Process Image',
+  }}
+/>
+
+  <!-- Content Widget **************** -->
+
+<Content
+isReversed
+items={[
+  {
+    title: 'Keyword Optimization',
+    description:
+      'We strategically integrate high-performing keywords into your content to improve search engine rankings and drive targeted traffic.',
+    icon: 'tabler:search',
+  },
+  {
+    title: 'Content Strategy',
+    description:
+      'Our team creates and optimizes engaging, SEO-friendly content that resonates with your audience and boosts your authority.',
+    icon: 'tabler:writing',
+  },
+  {
+    title: 'Link Building',
+    description:
+      'We build high-quality backlinks to enhance your website’s authority and improve its ranking on search engines.',
+    icon: 'tabler:link',
+  },
+  {
+    title: 'Performance Tracking',
+    description:
+      'We provide detailed analytics and reports to track your website’s performance and measure the success of our SEO efforts.',
+    icon: 'tabler:chart-bar',
+  },
+]}
+image={{
+  src: 'https://images.unsplash.com/photo-1576153192621-7a3be10b356e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1674&q=80',
+  alt: 'SEO Features Image',
+}}
+>
+<Fragment slot="content">
+  <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Why Choose Our SEO Services?</h3>
+</Fragment>
+</Content>
+
+  <!-- Content Widget **************** -->
+
+<Content
+isAfterContent
+items={[
+  {
+    title: 'Local SEO Optimization',
+    description:
+      'We optimize your website for local searches, helping you attract customers in your area and dominate local search results.',
+    icon: 'tabler:map-pin',
+  },
+  {
+    title: 'E-commerce SEO',
+    description:
+      'We specialize in optimizing e-commerce websites to improve product visibility, drive traffic, and increase sales.',
+    icon: 'tabler:shopping-cart',
+  },
+  {
+    title: 'Mobile SEO',
+    description:
+      'We ensure your website is fully optimized for mobile devices, providing a seamless experience for mobile users.',
+    icon: 'tabler:device-mobile',
+  },
+  {
+    title: 'Ongoing Support',
+    description:
+      'Our team provides continuous support and updates to keep your website optimized and ahead of the competition.',
+    icon: 'tabler:headset',
+  },
+]}
+image={{
+  src: 'https://images.unsplash.com/photo-1453738773917-9c3eff1db985?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
+  alt: 'SEO Benefits Image',
+}}
+>
+<Fragment slot="content">
+  <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Additional SEO Features</h3>
+</Fragment>
+</Content>
+
+  <!-- Testimonials Widget *********** -->
+
+  <Testimonials
+  title="What Our Clients Say"
+  testimonials={[
+    {
+      testimonial: `Working with Target Rank SEO has been a game-changer for our online presence. Their SEO strategies have significantly boosted our organic traffic, and their team is always responsive and professional.`,
+      name: 'Rena Shamoon',
+      job: 'Rochester Beauty Bar Medspa Owner',
+      image: {
+        src: 'https://khnxrwqpws.ufs.sh/f/ZfzyDSYoDactMtJwxcIWLOKpy3HmqakQns5l6iJz4D8GuheX',
+        alt: 'Rena Shamoon Image',
+      },
+    },
+    {
+      testimonial: `The custom website they designed for us is stunning and user-friendly. It has helped us convert more leads into customers, and their ongoing support has been invaluable. Highly recommend their services!`,
+      name: 'Emmanuel Yousif',
+      job: 'AEY Packaging Owner',
+      image: {
+        src: 'https://khnxrwqpws.ufs.sh/f/ZfzyDSYoDactx6PVLihe3nrWOSw576bIa9MCV420UY1ANuTF',
+        alt: 'Emmanuel Yousif Image',
+      },
+    },
+    {
+      testimonial: `Their social media management has transformed our online engagement. Our followers have grown exponentially, and the content they create is always on-brand and impactful. Truly a top-notch team!`,
+      name: 'Andrew Sassine',
+      job: 'GemTCG Owner',
+      image: {
+        src: 'https://khnxrwqpws.ufs.sh/f/ZfzyDSYoDacthNEMsbeGkyBRe0c2TPpVJUnOFQ3ICbaAL5Yo',
+        alt: 'Andrew Sassine Image',
+      },
+    },
+  ]}
+  callToAction={{
+    target: '_blank',
+    text: 'Read more testimonials...',
+    href: '/testimonials',
+    icon: 'tabler:chevron-right',
+  }}
+  />
+
+  <!-- FAQs Widget ******************* -->
+
+<FAQs
+title="Frequently Asked Questions"
+items={[
+  {
+    title: 'What is SEO, and why is it important?',
+    description:
+      'SEO (Search Engine Optimization) is the process of improving your website’s visibility on search engines like Google. It’s crucial because it helps drive organic traffic, increases brand credibility, and boosts conversions.',
+  },
+  {
+    title: 'How long does it take to see results from SEO?',
+    description:
+      'SEO is a long-term strategy. While some improvements can be seen in a few weeks, significant results typically take 3-6 months, depending on your industry and competition.',
+  },
+  {
+    title: 'Do you offer local SEO services?',
+    description:
+      'Yes, we specialize in local SEO to help businesses attract customers in their area. We optimize your website for local searches and manage your Google My Business profile.',
+  },
+  {
+    title: 'What’s included in your SEO services?',
+    description:
+      'Our SEO services include keyword research, on-page optimization, technical SEO, content creation, link building, and performance tracking to ensure your website ranks higher and performs better.',
+  },
+  {
+    title: 'How do you measure SEO success?',
+    description:
+      'We measure success through key metrics like organic traffic, keyword rankings, bounce rates, and conversions. We provide detailed reports to track progress and adjust strategies as needed.',
+  },
+]}
+/>
+<!-- CallToAction Widget *********** -->
+
+<CallToAction
+  id="contact"
+  title="Ready to Dominate Search Rankings?"
+  subtitle="Let’s work together to optimize your website, drive more traffic, and grow your business. Contact us today to get started!"
+>
+</CallToAction>
+</Layout>
