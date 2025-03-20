@@ -1,0 +1,77 @@
+---
+import Layout from '~/layouts/LandingLayout.astro';
+
+import Hero2 from '~/components/widgets/Hero2.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+import Testimonials from '~/components/widgets/Testimonials.astro';
+
+const metadata = {
+  title: 'Client Testimonials',
+};
+---
+
+<Layout metadata={metadata}>
+  <!-- Hero2 Widget ******************* -->
+
+  <Hero2
+    tagline="Client Success Stories"
+    title="Hear From Our Happy Clients"
+    subtitle="Discover how we’ve helped businesses like yours achieve remarkable results through our digital marketing expertise."
+    actions={[
+      { variant: 'primary', text: 'Contact Us', href: '/contact', icon: 'tabler:square-rounded-arrow-right' },
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1516321497487-e288fb19713f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
+      alt: 'Client Testimonials Hero Image',
+    }}
+  />
+
+  <!-- Testimonials Widget *********** -->
+
+  <Testimonials
+    title="What Our Clients Say"
+    testimonials={[
+      {
+        testimonial: `Working with Target Rank SEO has been a game-changer for our online presence. Their SEO strategies have significantly boosted our organic traffic, and their team is always responsive and professional.`,
+        name: 'Rena Shamoon',
+        job: 'Rochester Beauty Bar Medspa Owner',
+        image: {
+          src: 'https://khnxrwqpws.ufs.sh/f/ZfzyDSYoDactMtJwxcIWLOKpy3HmqakQns5l6iJz4D8GuheX',
+          alt: 'Rena Shamoon Image',
+        },
+      },
+      {
+        testimonial: `The custom website they designed for us is stunning and user-friendly. It has helped us convert more leads into customers, and their ongoing support has been invaluable. Highly recommend their services!`,
+        name: 'Emmanuel Yousif',
+        job: 'AEY Packaging Owner',
+        image: {
+          src: 'https://khnxrwqpws.ufs.sh/f/ZfzyDSYoDactx6PVLihe3nrWOSw576bIa9MCV420UY1ANuTF',
+          alt: 'Emmanuel Yousif Image',
+        },
+      },
+      {
+        testimonial: `Their social media management has transformed our online engagement. Our followers have grown exponentially, and the content they create is always on-brand and impactful. Truly a top-notch team!`,
+        name: 'Andrew Sassine',
+        job: 'GemTCG Owner',
+        image: {
+          src: 'https://khnxrwqpws.ufs.sh/f/ZfzyDSYoDacthNEMsbeGkyBRe0c2TPpVJUnOFQ3ICbaAL5Yo',
+          alt: 'Andrew Sassine Image',
+        },
+      },
+    ]}
+  />
+
+  <!-- CallToAction Widget *********** -->
+
+  <CallToAction
+    title="Ready to See Results Like These?"
+    subtitle="Let’s work together to grow your business and achieve your goals. Contact us today to get started!"
+    actions={[
+      {
+        variant: 'primary',
+        text: 'Contact Us',
+        href: '/contact',
+      },
+    ]}
+  />
+</Layout>

@@ -116,8 +116,8 @@ export const footerData = {
         { text: 'About Us', href: '/about-us' },
         { text: 'Blog', href: '/blog' },
         { text: 'Pricing', href: '/pricing' },
-        { text: 'Testimonials', href: '#' },
-        { text: 'Case Studies', href: '#' },
+        { text: 'Testimonials', href: '/testimonials' },
+        /*{ text: 'Case Studies', href: '#' },*/
       ],
     },
   ],
