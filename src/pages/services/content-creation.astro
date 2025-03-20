@@ -1,0 +1,272 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+
+import Hero2 from '~/components/widgets/Hero2.astro';
+import Features from '~/components/widgets/Features.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+import Content from '~/components/widgets/Content.astro';
+
+import FAQs from '~/components/widgets/FAQs.astro';
+
+const metadata = {
+  title: 'Content Creation',
+};
+---
+
+<Layout metadata={metadata}>
+<!-- Hero2 Widget ******************* -->
+
+<Hero2
+  tagline="Content Creation Services"
+  actions={[
+    { variant: 'primary', target: '_blank', text: 'Contact Us', href: '/contact' },
+  ]}
+  image={{
+    src: 'https://images.unsplash.com/photo-1580481072645-022f9a6dbf27?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
+    alt: 'Content Creation Hero Image',
+  }}
+>
+  <Fragment slot="title">
+    Elevate Your Online Presence with <span class="text-accent dark:text-white highlight">Expert Content Creation</span>: <br /> Drive Traffic and Boost Engagement<br />
+  </Fragment>
+
+  <Fragment slot="subtitle">
+    <span class="hidden sm:inline">
+      Our content creation services are designed to help you rank higher, engage your audience, and grow your business.</span
+    >
+    From blog writing to SEO-optimized content, we deliver high-quality content that drives results.
+  </Fragment>
+</Hero2>
+
+<!-- Features Widget *************** -->
+
+<Features
+  id="features"
+  title="Why Choose Our Content Creation Services?"
+  subtitle="We create content that not only engages your audience but also improves your search engine rankings. Here’s what sets us apart:"
+  columns={2}
+  items={[
+    {
+      title: 'SEO-Optimized Blog Writing',
+      description:
+        'We craft blogs that are optimized for search engines, helping you rank higher and attract organic traffic.',
+      icon: 'tabler:writing',
+    },
+    {
+      title: 'Keyword Research',
+      description:
+        'Our team identifies the most relevant and high-performing keywords to ensure your content reaches the right audience.',
+      icon: 'tabler:search',
+    },
+    {
+      title: 'Engaging Content Strategy',
+      description:
+        'We develop a content strategy that aligns with your business goals and resonates with your target audience.',
+      icon: 'tabler:file-text',
+    },
+    {
+      title: 'Content Calendar Planning',
+      description:
+        'We create and manage a content calendar to ensure consistent publishing and maximize your content’s impact.',
+      icon: 'tabler:calendar',
+    },
+    {
+      title: 'High-Quality Visual Content',
+      description:
+        'We enhance your content with professional visuals, including images, infographics, and videos.',
+      icon: 'tabler:photo',
+    },
+    {
+      title: 'Performance Tracking',
+      description:
+        'We provide detailed analytics to track your content’s performance and make data-driven improvements.',
+      icon: 'tabler:chart-bar',
+    },
+  ]}
+/>
+
+<!-- Content Widget **************** -->
+
+<Content
+  title="Use Cases"
+  subtitle="Discover how our content creation services can help businesses across industries achieve their goals."
+  isReversed
+  items={[
+    {
+      title: 'Blog Writing:',
+      description:
+        'Create engaging, SEO-optimized blogs that attract readers, improve your search rankings, and establish your authority in your industry.',
+    },
+    {
+      title: 'Website Content:',
+      description:
+        'We craft compelling website copy that communicates your brand’s message and drives conversions.',
+    },
+    {
+      title: 'Social Media Content:',
+      description:
+        'We create shareable, engaging content for your social media platforms to boost your online presence and connect with your audience.',
+    },
+    {
+      title: 'E-commerce Product Descriptions:',
+      description:
+        'We write persuasive product descriptions that highlight your offerings and drive sales.',
+    },
+  ]}
+  image={{
+    src: 'https://images.unsplash.com/photo-1620558138198-cfb9b4f3c294?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1671&q=80',
+    alt: 'Content Creation Use Cases Image',
+  }}
+>
+  <Fragment slot="content">
+    <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">
+      Content Creation Success Stories: <br /><span class="text-2xl">Driving Results Across Industries</span>
+    </h3>
+  </Fragment>
+
+  <Fragment slot="bg">
+    <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+  </Fragment>
+</Content>
+
+<!-- Content Widget **************** -->
+
+<Content
+  isAfterContent={true}
+  items={[
+    {
+      title: 'Description:',
+      description:
+        'Our content creation services are designed to help businesses maximize their online presence and achieve their goals. Whether you need blogs, website content, or social media posts, we deliver high-quality content that drives results.',
+    },
+    {
+      title: 'Benefits:',
+      description:
+        'Improve your search engine rankings with SEO-optimized content. <br /> Engage your audience with high-quality, relevant content. <br /> Build brand authority and trust with consistent, valuable content. <br /> Drive traffic and conversions with compelling copy. <br /> Save time with professional content creation and management.',
+    },
+  ]}
+  image={{
+    src: 'https://images.unsplash.com/photo-1531973486364-5fa64260d75b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1658&q=80',
+    alt: 'Content Creation Benefits Image',
+  }}
+>
+  <Fragment slot="content">
+    <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">
+      Content Creation Benefits: <br /><span class="text-2xl">Maximizing Your Online Presence</span>
+    </h3>
+  </Fragment>
+
+  <Fragment slot="bg">
+    <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+  </Fragment>
+</Content>
+
+<!-- Content Widget **************** -->
+
+<Content
+  isReversed
+  isAfterContent={true}
+  items={[
+    {
+      title: 'Description:',
+      description:
+        'Our content creation services are tailored to meet the needs of businesses of all sizes. From startups to large enterprises, we create content that drives results and grows your business.',
+    },
+    {
+      title: 'Benefits:',
+      description:
+        'Custom content tailored to your brand and audience. <br /> Consistent publishing to keep your audience engaged. <br /> High-quality visuals to enhance your content. <br /> Data-driven strategies to maximize your content’s impact. <br /> Ongoing support to ensure your content performs at its best.',
+    },
+  ]}
+  image={{
+    src: 'https://images.unsplash.com/photo-1635070041078-e363dbe005cb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
+    alt: 'Content Creation Campaigns Image',
+  }}
+>
+  <Fragment slot="content">
+    <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">
+      Content Creation Campaigns: <br /><span class="text-2xl">Driving Results for Businesses</span>
+    </h3>
+  </Fragment>
+
+  <Fragment slot="bg">
+    <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+  </Fragment>
+</Content>
+
+<!-- Content Widget **************** -->
+
+<Content
+  items={[
+    {
+      title: 'Description:',
+      description:
+        'Our content creation services are tailored to help small businesses compete in the digital marketplace. We create cost-effective, high-quality content that drives traffic and maximizes your return on investment.',
+    },
+    {
+      title: 'Benefits:',
+      description:
+        'Affordable solutions for small businesses. <br /> Professional content that builds trust and credibility. <br /> Mobile-friendly content for on-the-go users. <br /> Easy-to-manage content creation and publishing. <br /> Ongoing support to keep your content up-to-date.',
+    },
+  ]}
+  image={{
+    src: 'https://images.unsplash.com/photo-1514621166532-aa7eb1a3a2f4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80',
+    alt: 'Small Business Content Image',
+  }}
+>
+  <Fragment slot="content">
+    <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">
+      Small Business Content: <br /><span class="text-2xl">Driving Growth with Professional Content</span>
+    </h3>
+  </Fragment>
+
+  <Fragment slot="bg">
+    <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+  </Fragment>
+</Content>
+
+<!-- FAQs Widget ******************* -->
+
+<FAQs
+  title="Frequently Asked Questions"
+  items={[
+    {
+      title: 'What types of content do you create?',
+      description:
+        'We create a wide range of content, including blogs, website copy, social media posts, product descriptions, and more. Our content is tailored to your business goals and audience.',
+      icon: 'tabler:chevrons-right',
+    },
+    {
+      title: 'How do you ensure content is SEO-optimized?',
+      description:
+        'We conduct thorough keyword research and follow SEO best practices to ensure your content ranks higher in search engines and drives organic traffic.',
+      icon: 'tabler:chevrons-right',
+    },
+    {
+      title: 'Can you help with content strategy?',
+      description:
+        'Yes, we develop a comprehensive content strategy that aligns with your business goals and ensures consistent, high-quality content creation.',
+      icon: 'tabler:chevrons-right',
+    },
+    {
+      title: 'Do you provide content for social media?',
+      description:
+        'Absolutely! We create engaging, shareable content for social media platforms to boost your online presence and connect with your audience.',
+      icon: 'tabler:chevrons-right',
+    },
+  ]}
+>
+  <Fragment slot="bg">
+    <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+  </Fragment>
+</FAQs>
+
+<!-- CallToAction Widget *********** -->
+
+<CallToAction
+  id="contact"
+  title="Ready to Elevate Your Content?"
+  subtitle="Let’s work together to create high-quality content that drives traffic, engages your audience, and grows your business. Contact us today to get started!"
+>
+</CallToAction>
+</Layout>

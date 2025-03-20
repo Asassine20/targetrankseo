@@ -1,0 +1,332 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+
+import Hero from '~/components/widgets/Hero.astro';
+import Content from '~/components/widgets/Content.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+import Features3 from '~/components/widgets/Features3.astro';
+import Testimonials from '~/components/widgets/Testimonials.astro';
+import Steps from '~/components/widgets/Steps.astro';
+import BlogLatestPosts from '~/components/widgets/BlogLatestPosts.astro';
+import { getPermalink } from '~/utils/permalinks';
+
+const metadata = {
+  title: 'Personal Homepage Demo',
+};
+---
+
+<Layout metadata={metadata}>
+  <!-- Hero2 Widget ******************* -->
+
+<Hero
+id="hero"
+title="Andrew Sassine"
+tagline="Founder & Digital Marketing Expert"
+actions={[{ variant: 'primary', text: 'Contact Me', href: getPermalink('/contact') }]}
+>
+<Fragment slot="subtitle">
+  I'm a passionate digital marketer & software engineer with 4 years of experience in driving online growth and delivering measurable results. <br /> 
+  As the founder of Target Rank SEO, I specialize in crafting data-driven strategies that help businesses thrive in the digital landscape. My mission is to transform brands, engage audiences, and achieve exceptional ROI.
+</Fragment>
+</Hero>
+
+<!-- Content Widget **************** -->
+
+<Content
+id="about"
+columns={3}
+items={[
+  {
+    icon: 'tabler:brand-linkedin',
+    callToAction: {
+      target: '_blank',
+      text: 'LinkedIn',
+      href: 'https://linkedin.com/in/andrewsassine',
+    },
+  },
+]}
+image={{
+  src: 'https://images.unsplash.com/photo-1491349174775-aaafddd81942?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80',
+  alt: 'Colorful Image',
+  loading: 'eager',
+}}
+>
+<Fragment slot="content">
+  <h2 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">About Me</h2>
+  <p>
+    Welcome to my digital marketing journey. With a passion for innovation and a commitment to excellence, I’ve dedicated my career to helping businesses achieve their online potential. My work is a blend of creativity, strategy, and data-driven decision-making.
+  </p>
+  <br />
+  <p>
+    I draw inspiration from the ever-evolving digital landscape, constantly exploring new trends, tools, and technologies to stay ahead of the curve. Whether it’s crafting compelling campaigns, optimizing websites for search engines, or managing social media strategies, I thrive on delivering results that make a difference.
+  </p>
+  <br />
+  <p>If you'd like to connect or learn more about my work, you can follow me:</p>
+</Fragment>
+
+<Fragment slot="bg">
+  <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+</Fragment>
+</Content>
+
+<!-- Steps Widget ****************** -->
+
+<Steps
+id="resume"
+title="Work Experience"
+items={[
+  {
+    title:
+      'Founder & CEO <br /> <span class="font-normal">Target Rank SEO, Troy, MI</span> <br /> <span class="text-sm font-normal">2020 - Present</span>',
+    description: `Founded and lead a full-service digital marketing agency specializing in SEO, PPC, social media, and content creation. <br /> Develop and execute data-driven marketing strategies for clients across various industries. <br /> Oversee a team of talented marketers to deliver exceptional results and client satisfaction. <br /> Drive business growth through innovative campaigns and measurable outcomes.`,
+    icon: 'tabler:briefcase',
+  }
+]}
+classes={{ container: 'max-w-3xl' }}
+/>
+
+<!-- Steps Widget ****************** -->
+
+<Steps
+id="resume"
+title="Education"
+items={[
+  {
+    title: `Bachelor's Degree <br /> <span class="font-normal">Wayne State University</span> <br /> <span class="text-sm font-normal">2020-2024</span>`,
+    icon: 'tabler:school',
+  }
+]}
+classes={{ container: 'max-w-3xl' }}
+/>
+
+<!-- Features3 Widget ************** -->
+
+<Features3
+title="Skills"
+subtitle="Discover the expertise that allows me to drive digital success for businesses."
+columns={3}
+defaultIcon="tabler:point-filled"
+items={[
+  {
+    title: 'SEO & SEM',
+    description: 'Expert in optimizing websites for search engines and managing paid search campaigns.',
+  },
+  {
+    title: 'Social Media Marketing',
+    description: 'Skilled in creating and managing social media strategies to engage audiences and grow brands.',
+  },
+  {
+    title: 'Content Creation',
+    description: 'Proficient in crafting compelling content that drives traffic and conversions.',
+  },
+  {
+    title: 'Data Analytics',
+    description: 'Experienced in analyzing campaign performance and making data-driven decisions.',
+  },
+  {
+    title: 'Email Marketing',
+    description: 'Adept at designing and executing email campaigns that deliver results.',
+  },
+  {
+    title: 'PPC Advertising',
+    description: 'Knowledgeable in managing pay-per-click campaigns to maximize ROI.',
+  },
+  {
+    title: 'Web Design & Development',
+    description: 'Skilled in creating user-friendly, responsive websites that drive engagement.',
+  },
+  {
+    title: 'Brand Strategy',
+    description: 'Experienced in developing brand identities and strategies that resonate with target audiences.',
+  },
+  {
+    title: 'Project Management',
+    description: 'Proficient in managing multiple projects and delivering results on time and within budget.',
+  },
+]}
+/>
+
+<!-- Content Widget **************** -->
+
+<Content
+  id="portfolio"
+  title="Driving Digital Success"
+  subtitle="Explore my portfolio, where strategy, creativity, and technical expertise come together to deliver exceptional results for businesses."
+  isReversed
+  items={[
+    {
+      title: 'Description:',
+      description:
+        'Designed and developed a website for Rochester Beauty Bar, a medspa in Rochester, Michigan, while also implementing a robust SEO strategy. This resulted in a 600+% increase in clicks and impressions within the first 3 months. The website also began generating around 6 leads per week from Google Search, with many converting into paying customers.',
+    },
+    {
+      title: 'Role:',
+      description:
+        'Led the web design and development process, creating a visually appealing and user-friendly website. Conducted keyword research, optimized on-page SEO elements, and built high-quality backlinks to improve search rankings. Monitored performance using analytics tools and made data-driven adjustments to maximize results.',
+    },
+  ]}
+  image={{
+    src: 'https://images.unsplash.com/photo-1658248165252-71e116af1b34?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=928&q=80',
+    alt: 'Rochester Beauty Bar Project Image',
+  }}
+  callToAction={{
+    target: '_blank',
+    text: 'Go to the project',
+    icon: 'tabler:chevron-right',
+    href: 'https://rochesterbeautybar.com',
+  }}
+>
+  <Fragment slot="content">
+    <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">
+      Project 1: <br /><span class="text-2xl">Web Design, Development, and SEO for Rochester Beauty Bar</span>
+    </h3>
+  </Fragment>
+
+  <Fragment slot="bg">
+    <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+  </Fragment>
+</Content>
+
+<!-- Content Widget **************** -->
+
+<Content
+  isReversed
+  isAfterContent={true}
+  items={[
+    {
+      title: 'Description:',
+      description:
+        'Developed a mobile-friendly and high-performance website for AEY Packaging, a supply and packaging company based in Michigan. The website was optimized for speed, ensuring a seamless user experience across all devices.',
+    },
+    {
+      title: 'Role:',
+      description: `Designed and developed the website with a focus on responsiveness and performance. Implemented best practices for web development, including optimized images, minified code, and efficient caching. Ensured the website was easy to navigate and provided a great user experience for both desktop and mobile users.`,
+    },
+  ]}
+  image={{
+    src: 'https://images.unsplash.com/photo-1619983081563-430f63602796?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80',
+    alt: 'AEY Packaging Project Image',
+  }}
+  callToAction={{
+    target: '_blank',
+    text: 'Go to the project',
+    icon: 'tabler:chevron-right',
+    href: 'https://aeypackaging.com',
+  }}
+>
+  <Fragment slot="content">
+    <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">
+      Project 2: <br /><span class="text-2xl">Web Development for AEY Packaging</span>
+    </h3>
+  </Fragment>
+
+  <Fragment slot="bg">
+    <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+  </Fragment>
+</Content>
+
+<!-- Content Widget **************** -->
+
+<Content
+  isReversed
+  isAfterContent={true}
+  items={[
+    {
+      title: 'Description:',
+      description: `Designed, developed, and optimized the website for GemTCG, an online blog and affiliate website for trading cards. The project included SEO implementation to improve organic search rankings and drive traffic.`,
+    },
+    {
+      title: 'Role:',
+      description: `Created a visually appealing and functional website tailored to the trading card niche. Conducted keyword research, optimized on-page SEO elements, and built a content strategy to attract and engage the target audience. Ensured the website was fast, responsive, and user-friendly.`,
+    },
+  ]}
+  image={{
+    src: 'https://plus.unsplash.com/premium_photo-1683288295841-782fa47e4770?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80',
+    alt: 'GemTCG Project Image',
+  }}
+  callToAction={{
+    target: '_blank',
+    text: 'Go to the project',
+    icon: 'tabler:chevron-right',
+    href: 'https://gemtcg.com',
+  }}
+>
+  <Fragment slot="content">
+    <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">
+      Project 3: <br /><span class="text-2xl">Web Design, Development, and SEO for GemTCG</span>
+    </h3>
+  </Fragment>
+
+  <Fragment slot="bg">
+    <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+  </Fragment>
+</Content>
+
+  <!-- Testimonials Widget *********** -->
+
+<Testimonials
+title="What Our Clients Say"
+testimonials={[
+  {
+    testimonial: `Working with Target Rank SEO has been a game-changer for our online presence. Their SEO strategies have significantly boosted our organic traffic, and their team is always responsive and professional.`,
+    name: 'Rena Shamoon',
+    job: 'Rochester Beauty Bar Medspa Owner',
+    image: {
+      src: 'https://khnxrwqpws.ufs.sh/f/ZfzyDSYoDactMtJwxcIWLOKpy3HmqakQns5l6iJz4D8GuheX',
+      alt: 'Rena Shamoon Image',
+    },
+  },
+  {
+    testimonial: `The custom website they designed for us is stunning and user-friendly. It has helped us convert more leads into customers, and their ongoing support has been invaluable. Highly recommend their services!`,
+    name: 'Emmanuel Yousif',
+    job: 'AEY Packaging Owner',
+    image: {
+      src: 'https://khnxrwqpws.ufs.sh/f/ZfzyDSYoDactx6PVLihe3nrWOSw576bIa9MCV420UY1ANuTF',
+      alt: 'Emmanuel Yousif Image',
+    },
+  },
+  {
+    testimonial: `Their social media management has transformed our online engagement. Our followers have grown exponentially, and the content they create is always on-brand and impactful. Truly a top-notch team!`,
+    name: 'Andrew Sassine',
+    job: 'GemTCG Owner',
+    image: {
+      src: 'https://khnxrwqpws.ufs.sh/f/ZfzyDSYoDacthNEMsbeGkyBRe0c2TPpVJUnOFQ3ICbaAL5Yo',
+      alt: 'Andrew Sassine Image',
+    },
+  },
+]}
+callToAction={{
+  target: '_blank',
+  text: 'Read more testimonials...',
+  href: '/testimonials',
+  icon: 'tabler:chevron-right',
+}}
+/>
+
+  <!-- CallToAction Widget *********** -->
+
+<!-- CallToAction Widget *********** -->
+
+<CallToAction
+  title="Let's Grow Your Business Together"
+  subtitle="Ready to take your digital presence to the next level? Let’s create a strategy that drives results and achieves your goals."
+  actions={[
+    {
+      variant: 'primary',
+      text: 'Contact Me',
+    },
+  ]}
+/>
+
+<!-- BlogLatestPost Widget **************** -->
+
+<BlogLatestPosts
+  id="blog"
+  title="Explore My Insights on Digital Marketing"
+  information={`Dive into a collection of articles, tips, and strategies on SEO, PPC, social media, content creation, and more. Stay ahead of the curve with the latest trends and best practices in digital marketing.`}
+>
+  <Fragment slot="bg">
+    <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+  </Fragment>
+</BlogLatestPosts>
+</Layout>

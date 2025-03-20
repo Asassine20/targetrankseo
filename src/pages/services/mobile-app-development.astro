@@ -1,0 +1,272 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+
+import Hero2 from '~/components/widgets/Hero2.astro';
+import Features from '~/components/widgets/Features.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+import Content from '~/components/widgets/Content.astro';
+
+import FAQs from '~/components/widgets/FAQs.astro';
+
+const metadata = {
+  title: 'Mobile App Development',
+};
+---
+
+<Layout metadata={metadata}>
+<!-- Hero2 Widget ******************* -->
+
+<Hero2
+  tagline="Mobile App Development Services"
+  actions={[
+    { variant: 'primary', target: '_blank', text: 'Contact Us', href: '/contact' },
+  ]}
+  image={{
+    src: 'https://images.unsplash.com/photo-1580481072645-022f9a6dbf27?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
+    alt: 'Mobile App Development Hero Image',
+  }}
+>
+  <Fragment slot="title">
+    Build Powerful Mobile Apps with <span class="text-accent dark:text-white highlight">Expert Development</span>: <br /> Engage Users and Grow Your Business<br />
+  </Fragment>
+
+  <Fragment slot="subtitle">
+    <span class="hidden sm:inline">
+      Our mobile app development services are designed to help you create user-friendly, high-performance apps that deliver results.</span
+    >
+    From concept to launch, we handle every step of the process to ensure your app stands out in the market.
+  </Fragment>
+</Hero2>
+
+<!-- Features Widget *************** -->
+
+<Features
+  id="features"
+  title="Why Choose Our Mobile App Development Services?"
+  subtitle="We create mobile apps that are not only visually appealing but also highly functional and user-friendly. Here’s what sets us apart:"
+  columns={2}
+  items={[
+    {
+      title: 'Custom App Development',
+      description:
+        'We design and develop custom mobile apps tailored to your business needs, ensuring a unique and engaging user experience.',
+      icon: 'tabler:device-mobile',
+    },
+    {
+      title: 'Cross-Platform Development',
+      description:
+        'We build apps that work seamlessly across iOS and Android platforms, maximizing your reach and reducing development costs.',
+      icon: 'tabler:devices',
+    },
+    {
+      title: 'User-Centric Design',
+      description:
+        'We focus on creating intuitive, user-friendly interfaces that enhance user engagement and satisfaction.',
+      icon: 'tabler:user',
+    },
+    {
+      title: 'App Testing & Quality Assurance',
+      description:
+        'We rigorously test your app to ensure it’s bug-free, performs well, and delivers a seamless user experience.',
+      icon: 'tabler:check',
+    },
+    {
+      title: 'App Maintenance & Support',
+      description:
+        'We provide ongoing support and updates to keep your app running smoothly and up-to-date with the latest technologies.',
+      icon: 'tabler:headset',
+    },
+    {
+      title: 'App Store Optimization',
+      description:
+        'We optimize your app for app stores to improve visibility, downloads, and user engagement.',
+      icon: 'tabler:chart-bar',
+    },
+  ]}
+/>
+
+<!-- Content Widget **************** -->
+
+<Content
+  title="Use Cases"
+  subtitle="Discover how our mobile app development services can help businesses across industries achieve their goals."
+  isReversed
+  items={[
+    {
+      title: 'E-commerce Apps:',
+      description:
+        'Create seamless shopping experiences with custom e-commerce apps that drive sales and boost customer satisfaction.',
+    },
+    {
+      title: 'On-Demand Service Apps:',
+      description:
+        'Develop apps for on-demand services like food delivery, ride-sharing, and home services to connect with customers and streamline operations.',
+    },
+    {
+      title: 'Social Networking Apps:',
+      description:
+        'Build engaging social networking apps that connect users and foster community engagement.',
+    },
+    {
+      title: 'Enterprise Apps:',
+      description:
+        'Develop custom enterprise apps to improve internal processes, enhance productivity, and streamline communication.',
+    },
+  ]}
+  image={{
+    src: 'https://images.unsplash.com/photo-1620558138198-cfb9b4f3c294?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1671&q=80',
+    alt: 'Mobile App Use Cases Image',
+  }}
+>
+  <Fragment slot="content">
+    <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">
+      Mobile App Success Stories: <br /><span class="text-2xl">Driving Results Across Industries</span>
+    </h3>
+  </Fragment>
+
+  <Fragment slot="bg">
+    <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+  </Fragment>
+</Content>
+
+<!-- Content Widget **************** -->
+
+<Content
+  isAfterContent={true}
+  items={[
+    {
+      title: 'Description:',
+      description:
+        'Our mobile app development services are designed to help businesses create powerful, user-friendly apps that deliver results. From concept to launch, we handle every step of the process to ensure your app stands out in the market.',
+    },
+    {
+      title: 'Benefits:',
+      description:
+        'Create unique, engaging apps tailored to your business needs. <br /> Reach a wider audience with cross-platform development. <br /> Enhance user satisfaction with intuitive, user-centric design. <br /> Ensure high performance and reliability with rigorous testing. <br /> Keep your app up-to-date with ongoing maintenance and support.',
+    },
+  ]}
+  image={{
+    src: 'https://images.unsplash.com/photo-1531973486364-5fa64260d75b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1658&q=80',
+    alt: 'Mobile App Benefits Image',
+  }}
+>
+  <Fragment slot="content">
+    <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">
+      Mobile App Benefits: <br /><span class="text-2xl">Maximizing Your Business Potential</span>
+    </h3>
+  </Fragment>
+
+  <Fragment slot="bg">
+    <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+  </Fragment>
+</Content>
+
+<!-- Content Widget **************** -->
+
+<Content
+  isReversed
+  isAfterContent={true}
+  items={[
+    {
+      title: 'Description:',
+      description:
+        'Our mobile app development services are tailored to meet the needs of businesses of all sizes. From startups to large enterprises, we create apps that drive results and grow your business.',
+    },
+    {
+      title: 'Benefits:',
+      description:
+        'Custom solutions tailored to your business goals. <br /> Cross-platform development for maximum reach. <br /> High-quality, user-friendly designs. <br /> Rigorous testing for performance and reliability. <br /> Ongoing support to keep your app running smoothly.',
+    },
+  ]}
+  image={{
+    src: 'https://images.unsplash.com/photo-1635070041078-e363dbe005cb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
+    alt: 'Mobile App Campaigns Image',
+  }}
+>
+  <Fragment slot="content">
+    <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">
+      Mobile App Campaigns: <br /><span class="text-2xl">Driving Results for Businesses</span>
+    </h3>
+  </Fragment>
+
+  <Fragment slot="bg">
+    <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+  </Fragment>
+</Content>
+
+<!-- Content Widget **************** -->
+
+<Content
+  items={[
+    {
+      title: 'Description:',
+      description:
+        'Our mobile app development services are tailored to help small businesses compete in the digital marketplace. We create cost-effective, high-quality apps that drive engagement and maximize your return on investment.',
+    },
+    {
+      title: 'Benefits:',
+      description:
+        'Affordable solutions for small businesses. <br /> Professional apps that build trust and credibility. <br /> Mobile-friendly designs for on-the-go users. <br /> Easy-to-use interfaces for better user engagement. <br /> Ongoing support to keep your app up-to-date.',
+    },
+  ]}
+  image={{
+    src: 'https://images.unsplash.com/photo-1514621166532-aa7eb1a3a2f4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80',
+    alt: 'Small Business Mobile App Image',
+  }}
+>
+  <Fragment slot="content">
+    <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">
+      Small Business Mobile Apps: <br /><span class="text-2xl">Driving Growth with Professional Development</span>
+    </h3>
+  </Fragment>
+
+  <Fragment slot="bg">
+    <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+  </Fragment>
+</Content>
+
+<!-- FAQs Widget ******************* -->
+
+<FAQs
+  title="Frequently Asked Questions"
+  items={[
+    {
+      title: 'What platforms do you develop apps for?',
+      description:
+        'We develop apps for both iOS and Android platforms, ensuring your app reaches the widest possible audience.',
+      icon: 'tabler:chevrons-right',
+    },
+    {
+      title: 'How long does it take to develop a mobile app?',
+      description:
+        'The timeline depends on the complexity of the app. A simple app can take 2-4 months, while more complex projects may take 6-12 months or longer. We’ll provide a detailed timeline during the planning phase.',
+      icon: 'tabler:chevrons-right',
+    },
+    {
+      title: 'Do you provide app maintenance and support?',
+      description:
+        'Yes, we offer ongoing maintenance and support to ensure your app stays up-to-date and performs at its best.',
+      icon: 'tabler:chevrons-right',
+    },
+    {
+      title: 'Can you help with app store optimization?',
+      description:
+        'Absolutely! We optimize your app for app stores to improve visibility, downloads, and user engagement.',
+      icon: 'tabler:chevrons-right',
+    },
+  ]}
+>
+  <Fragment slot="bg">
+    <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+  </Fragment>
+</FAQs>
+
+<!-- CallToAction Widget *********** -->
+
+<CallToAction
+  id="contact"
+  title="Ready to Build Your Mobile App?"
+  subtitle="Let’s work together to create a powerful mobile app that engages users, drives traffic, and grows your business. Contact us today to get started!"
+>
+</CallToAction>
+</Layout>

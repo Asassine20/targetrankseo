@@ -9,16 +9,8 @@ import Features3 from '~/components/widgets/Features3.astro';
 import Content from '~/components/widgets/Content.astro';
 import Testimonials from '~/components/widgets/Testimonials.astro';
 import FAQs from '~/components/widgets/FAQs.astro';
-import Stats from '~/components/widgets/Stats.astro';
 
 import Button from '~/components/ui/Button.astro';
-import Image from '~/components/common/Image.astro';
-
-const appStoreImg = '~/assets/images/app-store.png';
-const appStoreDownloadLink = 'https://github.com/onwidget/astrowind';
-
-const googlePlayImg = '~/assets/images/google-play.png';
-const googlePlayDownloadLink = 'https://github.com/onwidget/astrowind';
 
 const metadata = {
   title: 'SEO',
@@ -26,25 +18,6 @@ const metadata = {
 ---
 
 <Layout metadata={metadata}>
-  <Fragment slot="header">
-    <Header
-      position="left"
-      links={[
-        { text: 'Services', href: '#' },
-        { text: 'Features', href: '#' },
-        { text: 'About', href: '#' },
-      ]}
-      actions={[
-        {
-          text: 'Download',
-          href: '#download',
-        },
-      ]}
-      isSticky
-      showToggleTheme
-    />
-  </Fragment>
-
   <!-- Hero2 Widget ******************* -->
 
   <Hero2
@@ -68,11 +41,7 @@ const metadata = {
 
   <div slot="actions" class="flex max-w-sm gap-4">
     <Button variant="primary" href="/contact">
-      Get Started
-    </Button>
-
-    <Button variant="secondary" href="/services">
-      Learn More
+      Contact Us
     </Button>
   </div>
 </Hero2>

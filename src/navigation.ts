@@ -89,29 +89,8 @@ export const headerData = {
     */
     {
       text: 'Blog',
-      links: [
-        {
-          text: 'Blog List',
-          href: getBlogPermalink(),
-        },
-        {
-          text: 'Article',
-          href: getPermalink('get-started-website-with-astro-tailwind-css', 'post'),
-        },
-        {
-          text: 'Article (with MDX)',
-          href: getPermalink('markdown-elements-demo-post', 'post'),
-        },
-        {
-          text: 'Category Page',
-          href: getPermalink('tutorials', 'category'),
-        },
-        {
-          text: 'Tag Page',
-          href: getPermalink('astro', 'tag'),
-        },
-      ],
-    },
+      href: getBlogPermalink()
+    }
   ],
   actions: [{ text: 'Contact', href: '/contact' }],
 };
@@ -121,13 +100,13 @@ export const footerData = {
     {
       title: 'Services',
       links: [
-        { text: 'SEO', href: '/seo' },
-        { text: 'PPC (Google Ads)', href: '/ppc' },
-        { text: 'Website Design & Development', href: '/website-design-development' },
-        { text: 'Content Creation', href: '/content-creation' },
-        { text: 'Social Media Management', href: '/social-media-management' },
-        { text: 'Mobile App Development', href: '/mobile-app-development' },
-        { text: 'Custom Software', href: '/custom-software' },
+        { text: 'SEO', href: '/services/seo' },
+        { text: 'PPC (Google Ads)', href: '/services/ppc' },
+        { text: 'Website Design & Development', href: '/services/website-design-development' },
+        { text: 'Content Creation', href: '/services/content-creation' },
+        { text: 'Social Media Management', href: '/services/social-media-management' },
+        { text: 'Mobile App Development', href: '/services/mobile-app-development' },
+        { text: 'Custom Software', href: '/services/custom-software' },
       ],
     },
 
@@ -137,8 +116,8 @@ export const footerData = {
         { text: 'About Us', href: '/about-us' },
         { text: 'Blog', href: '/blog' },
         { text: 'Pricing', href: '/pricing' },
-        { text: 'Testimonials', href: '/testimonials' },
-        { text: 'Case Studies', href: '/case-studies' },
+        { text: 'Testimonials', href: '#' },
+        { text: 'Case Studies', href: '#' },
       ],
     },
   ],

@@ -1,0 +1,315 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+
+import Hero2 from '~/components/widgets/Hero2.astro';
+import Features from '~/components/widgets/Features.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+import Content from '~/components/widgets/Content.astro';
+
+import FAQs from '~/components/widgets/FAQs.astro';
+
+const metadata = {
+  title: 'PPC (Google Ads)',
+};
+---
+
+<Layout metadata={metadata}>
+<!-- Hero2 Widget ******************* -->
+
+<Hero2
+  tagline="Google Ads (PPC) Services"
+  actions={[
+    { variant: 'primary', target: '_blank', text: 'Contact Us', href: '/contact' },
+  ]}
+  image={{
+    src: 'https://images.unsplash.com/photo-1580481072645-022f9a6dbf27?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
+    alt: 'PPC Hero Image',
+  }}
+>
+  <Fragment slot="title">
+    Maximize Your ROI with <span class="text-accent dark:text-white highlight">Google Ads</span>: <br /> Drive Targeted
+    Traffic and Boost Sales<br />
+  </Fragment>
+
+  <Fragment slot="subtitle">
+    <span class="hidden sm:inline">
+      Our expert PPC strategies ensure your ads reach the right audience at the right time.</span
+    >
+    From keyword research to ad optimization, we help you achieve measurable results and grow your business.
+  </Fragment>
+</Hero2>
+
+  <!-- Features Widget *************** -->
+
+<Features
+id="features"
+title="Why Choose Our PPC Services?"
+subtitle="Our Google Ads (PPC) strategies are designed to deliver measurable results and maximize your ROI. Here’s what sets us apart:"
+columns={2}
+items={[
+  {
+    title: 'Targeted Ad Campaigns',
+    description:
+      'We create highly targeted campaigns to ensure your ads reach the right audience, increasing conversions and reducing wasted ad spend.',
+    icon: 'tabler:target',
+  },
+  {
+    title: 'Expert Keyword Research',
+    description:
+      'Our team identifies the most relevant and high-performing keywords to drive qualified traffic to your website.',
+    icon: 'tabler:search',
+  },
+  {
+    title: 'Ad Copy Optimization',
+    description:
+      'We craft compelling ad copy that resonates with your audience and encourages clicks, improving your click-through rates (CTR).',
+    icon: 'tabler:writing',
+  },
+  {
+    title: 'Landing Page Optimization',
+    description:
+      'We optimize your landing pages to ensure they convert visitors into customers, maximizing the effectiveness of your ads.',
+    icon: 'tabler:file-text',
+  },
+  {
+    title: 'Real-Time Performance Tracking',
+    description:
+      'We monitor your campaigns in real-time, making adjustments to improve performance and ensure you get the best results.',
+    icon: 'tabler:chart-bar',
+  },
+  {
+    title: 'Transparent Reporting',
+    description:
+      'We provide detailed reports on your campaign performance, so you can see exactly how your budget is being spent and the results it’s generating.',
+    icon: 'tabler:file-analytics',
+  },
+]}
+/>
+
+<!-- Content Widget **************** -->
+
+<Content
+  title="Use Cases"
+  subtitle="Discover how our PPC services can help businesses across industries achieve their goals with targeted ad campaigns."
+  isReversed
+  items={[
+    {
+      title: 'E-commerce Businesses:',
+      description:
+        'Drive sales and increase revenue with highly targeted Google Ads campaigns. We optimize your product listings and create compelling ad copy to attract buyers and boost conversions.',
+    },
+    {
+      title: 'Local Businesses:',
+      description:
+        'Reach customers in your area with localized PPC campaigns. We help you dominate local search results and attract foot traffic to your store.',
+    },
+    {
+      title: 'Service-Based Businesses:',
+      description:
+        'Generate leads and grow your client base with ads tailored to your services. We focus on high-intent keywords to connect you with potential customers.',
+    },
+    {
+      title: 'B2B Companies:',
+      description:
+        'Target decision-makers and industry professionals with strategic PPC campaigns. We help you build brand authority and drive qualified leads.',
+    },
+  ]}
+  image={{
+    src: 'https://images.unsplash.com/photo-1620558138198-cfb9b4f3c294?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1671&q=80',
+    alt: 'PPC Use Cases Image',
+  }}
+>
+  <Fragment slot="content">
+    <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">
+      PPC Success Stories: <br /><span class="text-2xl">Driving Results Across Industries</span>
+    </h3>
+  </Fragment>
+
+  <Fragment slot="bg">
+    <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+  </Fragment>
+</Content>
+
+  <!-- Content Widget **************** -->
+
+<Content
+isAfterContent={true}
+items={[
+  {
+    title: 'Description:',
+    description:
+      'Our PPC services are designed to help businesses maximize their advertising ROI. Whether you’re looking to drive sales, generate leads, or increase brand awareness, we create tailored campaigns that deliver results.',
+  },
+  {
+    title: 'Benefits:',
+    description:
+      'Reach your target audience with precision using advanced targeting options. <br /> Optimize your ad spend to ensure maximum ROI. <br /> Track campaign performance in real-time and make data-driven adjustments. <br /> Improve conversion rates with optimized landing pages and compelling ad copy. <br /> Scale your campaigns as your business grows.',
+  },
+]}
+image={{
+  src: 'https://images.unsplash.com/photo-1531973486364-5fa64260d75b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1658&q=80',
+  alt: 'PPC Benefits Image',
+}}
+>
+<Fragment slot="content">
+  <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">
+    PPC Benefits: <br /><span class="text-2xl">Maximizing Your Advertising ROI</span>
+  </h3>
+</Fragment>
+
+<Fragment slot="bg">
+  <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+</Fragment>
+</Content>
+  <!-- Content Widget **************** -->
+
+<Content
+isReversed
+isAfterContent={true}
+items={[
+  {
+    title: 'Description:',
+    description:
+      'Our PPC services are designed to help businesses of all sizes achieve their advertising goals. Whether you’re a small business or a large enterprise, we create campaigns that drive results and maximize your ROI.',
+  },
+  {
+    title: 'Benefits:',
+    description:
+      'Reach your target audience with precision using advanced targeting options. <br /> Optimize your ad spend to ensure maximum ROI. <br /> Track campaign performance in real-time and make data-driven adjustments. <br /> Improve conversion rates with optimized landing pages and compelling ad copy. <br /> Scale your campaigns as your business grows.',
+  },
+]}
+image={{
+  src: 'https://images.unsplash.com/photo-1635070041078-e363dbe005cb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
+  alt: 'PPC Campaigns Image',
+}}
+>
+<Fragment slot="content">
+  <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">
+    PPC Campaigns: <br /><span class="text-2xl">Driving Results for Businesses</span>
+  </h3>
+</Fragment>
+
+<Fragment slot="bg">
+  <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+</Fragment>
+</Content>
+  <!-- Content Widget **************** -->
+
+<Content
+items={[
+  {
+    title: 'Description:',
+    description:
+      'Our PPC services are tailored to help small businesses compete in the digital marketplace. We create cost-effective campaigns that drive targeted traffic and maximize your return on investment.',
+  },
+  {
+    title: 'Benefits:',
+    description:
+      'Reach local and global audiences with precision-targeted ads. <br /> Optimize your ad spend to ensure maximum ROI. <br /> Drive conversions with compelling ad copy and optimized landing pages. <br /> Track campaign performance in real-time and make data-driven adjustments. <br /> Scale your campaigns as your business grows.',
+  },
+]}
+image={{
+  src: 'https://images.unsplash.com/photo-1514621166532-aa7eb1a3a2f4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80',
+  alt: 'Small Business PPC Image',
+}}
+>
+<Fragment slot="content">
+  <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">
+    Small Business Success: <br /><span class="text-2xl">Driving Growth with PPC</span>
+  </h3>
+</Fragment>
+
+<Fragment slot="bg">
+  <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+</Fragment>
+</Content>
+
+  <!-- Pricing Widget ******************* 
+
+  <Pricing
+    title="Flexible pricing plans"
+    prices={[
+      {
+        title: 'free',
+        subtitle: 'Access to core features and a wide range of templates',
+        price: '0',
+        period: '/ month',
+        callToAction: {
+          target: '_blank',
+          text: 'Get Started for Free',
+          href: '#',
+        },
+      },
+      {
+        title: 'pro',
+        subtitle: 'Premium templates and advanced customization',
+        price: 15,
+        period: '/ Month',
+        callToAction: {
+          target: '_blank',
+          text: 'Upgrade to Pro',
+          href: '#',
+        },
+        hasRibbon: true,
+        ribbonTitle: 'popular',
+      },
+      {
+        title: 'Enterprise',
+        subtitle: 'Tailored solutions for large-scale projects',
+        price: 45,
+        period: '/ Month',
+        callToAction: {
+          target: '_blank',
+          text: 'Unlock Enterprise Features',
+          href: '#',
+        },
+      },
+    ]}
+  />
+    -->
+  <!-- FAQs Widget ******************* -->
+
+<FAQs
+title="Frequently Asked Questions"
+items={[
+  {
+    title: 'What is PPC, and how does it work?',
+    description:
+      'PPC (Pay-Per-Click) is an online advertising model where you pay each time someone clicks on your ad. It allows you to bid for ad placement in search engine results or on websites, ensuring your ads reach your target audience.',
+    icon: 'tabler:chevrons-right',
+  },
+  {
+    title: 'How much does PPC advertising cost?',
+    description:
+      'The cost of PPC advertising varies depending on factors like industry, competition, and targeting. You set a budget, and you only pay when someone clicks on your ad, making it a cost-effective way to drive traffic.',
+    icon: 'tabler:chevrons-right',
+  },
+  {
+    title: 'How long does it take to see results from PPC?',
+    description:
+      'PPC campaigns can deliver immediate results, as your ads start appearing as soon as they’re live. However, optimizing campaigns for maximum ROI may take a few weeks as we analyze data and refine strategies.',
+    icon: 'tabler:chevrons-right',
+  },
+  {
+    title: 'Do you manage PPC campaigns for all platforms?',
+    description:
+      'Yes, we manage PPC campaigns across platforms like Google Ads, Bing Ads, and social media channels like Facebook and LinkedIn. We tailor campaigns to your goals and target audience.',
+    icon: 'tabler:chevrons-right',
+  },
+]}
+>
+<Fragment slot="bg">
+  <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+</Fragment>
+</FAQs>
+
+
+<!-- CallToAction Widget *********** -->
+
+<CallToAction
+  id="contact"
+  title="Ready to Dominate Search Rankings?"
+  subtitle="Let’s work together to optimize your website, drive more traffic, and grow your business. Contact us today to get started!"
+>
+</CallToAction>
+</Layout>

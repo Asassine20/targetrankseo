@@ -1,0 +1,272 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+
+import Hero2 from '~/components/widgets/Hero2.astro';
+import Features from '~/components/widgets/Features.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+import Content from '~/components/widgets/Content.astro';
+
+import FAQs from '~/components/widgets/FAQs.astro';
+
+const metadata = {
+  title: 'Social Media Management',
+};
+---
+
+<Layout metadata={metadata}>
+<!-- Hero2 Widget ******************* -->
+
+<Hero2
+  tagline="Social Media Management Services"
+  actions={[
+    { variant: 'primary', target: '_blank', text: 'Contact Us', href: '/contact' },
+  ]}
+  image={{
+    src: 'https://images.unsplash.com/photo-1580481072645-022f9a6dbf27?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
+    alt: 'Social Media Management Hero Image',
+  }}
+>
+  <Fragment slot="title">
+    Boost Your Online Presence with <span class="text-accent dark:text-white highlight">Expert Social Media Management</span>: <br /> Engage, Grow, and Convert<br />
+  </Fragment>
+
+  <Fragment slot="subtitle">
+    <span class="hidden sm:inline">
+      Our social media management services are designed to help you build a strong online presence, engage your audience, and drive results.</span
+    >
+    From content creation to analytics, we handle it all so you can focus on your business.
+  </Fragment>
+</Hero2>
+
+<!-- Features Widget *************** -->
+
+<Features
+  id="features"
+  title="Why Choose Our Social Media Management Services?"
+  subtitle="We create and manage social media strategies that drive engagement, grow your audience, and deliver measurable results. Here’s what sets us apart:"
+  columns={2}
+  items={[
+    {
+      title: 'Content Creation & Curation',
+      description:
+        'We create engaging, high-quality content tailored to your brand and audience, ensuring your social media channels stay active and relevant.',
+      icon: 'tabler:writing',
+    },
+    {
+      title: 'Social Media Strategy',
+      description:
+        'We develop a customized social media strategy that aligns with your business goals and maximizes your online presence.',
+      icon: 'tabler:route',
+    },
+    {
+      title: 'Community Engagement',
+      description:
+        'We actively engage with your audience, responding to comments, messages, and mentions to build relationships and foster loyalty.',
+      icon: 'tabler:message-circle',
+    },
+    {
+      title: 'Analytics & Reporting',
+      description:
+        'We provide detailed analytics and reports to track your social media performance and make data-driven improvements.',
+      icon: 'tabler:chart-bar',
+    },
+    {
+      title: 'Paid Social Media Advertising',
+      description:
+        'We manage paid social media campaigns to boost your reach, drive traffic, and generate leads.',
+      icon: 'tabler:ad',
+    },
+    {
+      title: 'Platform Management',
+      description:
+        'We manage all major social media platforms, including Facebook, Instagram, Twitter, LinkedIn, and more.',
+      icon: 'tabler:brand-facebook',
+    },
+  ]}
+/>
+
+<!-- Content Widget **************** -->
+
+<Content
+  title="Use Cases"
+  subtitle="Discover how our social media management services can help businesses across industries achieve their goals."
+  isReversed
+  items={[
+    {
+      title: 'Brand Awareness:',
+      description:
+        'Increase your brand’s visibility and reach a wider audience with strategic social media campaigns.',
+    },
+    {
+      title: 'Lead Generation:',
+      description:
+        'Drive qualified leads and conversions with targeted social media content and advertising.',
+    },
+    {
+      title: 'Customer Engagement:',
+      description:
+        'Build strong relationships with your audience through consistent engagement and interactive content.',
+    },
+    {
+      title: 'E-commerce Promotion:',
+      description:
+        'Promote your products and drive sales with visually appealing social media content and ads.',
+    },
+  ]}
+  image={{
+    src: 'https://images.unsplash.com/photo-1620558138198-cfb9b4f3c294?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1671&q=80',
+    alt: 'Social Media Use Cases Image',
+  }}
+>
+  <Fragment slot="content">
+    <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">
+      Social Media Success Stories: <br /><span class="text-2xl">Driving Results Across Industries</span>
+    </h3>
+  </Fragment>
+
+  <Fragment slot="bg">
+    <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+  </Fragment>
+</Content>
+
+<!-- Content Widget **************** -->
+
+<Content
+  isAfterContent={true}
+  items={[
+    {
+      title: 'Description:',
+      description:
+        'Our social media management services are designed to help businesses maximize their online presence and achieve their goals. Whether you need content creation, community engagement, or paid advertising, we deliver results.',
+    },
+    {
+      title: 'Benefits:',
+      description:
+        'Increase brand awareness and reach. <br /> Drive engagement and build relationships with your audience. <br /> Generate leads and conversions with targeted campaigns. <br /> Save time with professional social media management. <br /> Track performance and make data-driven improvements.',
+    },
+  ]}
+  image={{
+    src: 'https://images.unsplash.com/photo-1531973486364-5fa64260d75b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1658&q=80',
+    alt: 'Social Media Benefits Image',
+  }}
+>
+  <Fragment slot="content">
+    <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">
+      Social Media Benefits: <br /><span class="text-2xl">Maximizing Your Online Presence</span>
+    </h3>
+  </Fragment>
+
+  <Fragment slot="bg">
+    <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+  </Fragment>
+</Content>
+
+<!-- Content Widget **************** -->
+
+<Content
+  isReversed
+  isAfterContent={true}
+  items={[
+    {
+      title: 'Description:',
+      description:
+        'Our social media management services are tailored to meet the needs of businesses of all sizes. From startups to large enterprises, we create strategies that drive results and grow your business.',
+    },
+    {
+      title: 'Benefits:',
+      description:
+        'Custom strategies tailored to your brand and audience. <br /> Consistent posting to keep your audience engaged. <br /> High-quality visuals to enhance your content. <br /> Data-driven strategies to maximize your social media impact. <br /> Ongoing support to ensure your social media performs at its best.',
+    },
+  ]}
+  image={{
+    src: 'https://images.unsplash.com/photo-1635070041078-e363dbe005cb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
+    alt: 'Social Media Campaigns Image',
+  }}
+>
+  <Fragment slot="content">
+    <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">
+      Social Media Campaigns: <br /><span class="text-2xl">Driving Results for Businesses</span>
+    </h3>
+  </Fragment>
+
+  <Fragment slot="bg">
+    <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+  </Fragment>
+</Content>
+
+<!-- Content Widget **************** -->
+
+<Content
+  items={[
+    {
+      title: 'Description:',
+      description:
+        'Our social media management services are tailored to help small businesses compete in the digital marketplace. We create cost-effective, high-quality content that drives engagement and maximizes your return on investment.',
+    },
+    {
+      title: 'Benefits:',
+      description:
+        'Affordable solutions for small businesses. <br /> Professional content that builds trust and credibility. <br /> Mobile-friendly content for on-the-go users. <br /> Easy-to-manage social media accounts. <br /> Ongoing support to keep your social media up-to-date.',
+    },
+  ]}
+  image={{
+    src: 'https://images.unsplash.com/photo-1514621166532-aa7eb1a3a2f4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80',
+    alt: 'Small Business Social Media Image',
+  }}
+>
+  <Fragment slot="content">
+    <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">
+      Small Business Social Media: <br /><span class="text-2xl">Driving Growth with Professional Management</span>
+    </h3>
+  </Fragment>
+
+  <Fragment slot="bg">
+    <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+  </Fragment>
+</Content>
+
+<!-- FAQs Widget ******************* -->
+
+<FAQs
+  title="Frequently Asked Questions"
+  items={[
+    {
+      title: 'What platforms do you manage?',
+      description:
+        'We manage all major social media platforms, including Facebook, Instagram, Twitter, LinkedIn, and more. We tailor our strategies to the platforms that best suit your business.',
+      icon: 'tabler:chevrons-right',
+    },
+    {
+      title: 'How do you measure social media success?',
+      description:
+        'We track key metrics like engagement rates, follower growth, reach, and conversions to measure the success of your social media campaigns.',
+      icon: 'tabler:chevrons-right',
+    },
+    {
+      title: 'Can you help with paid social media advertising?',
+      description:
+        'Yes, we create and manage paid social media campaigns to boost your reach, drive traffic, and generate leads.',
+      icon: 'tabler:chevrons-right',
+    },
+    {
+      title: 'Do you provide content creation for social media?',
+      description:
+        'Absolutely! We create high-quality, engaging content tailored to your brand and audience.',
+      icon: 'tabler:chevrons-right',
+    },
+  ]}
+>
+  <Fragment slot="bg">
+    <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+  </Fragment>
+</FAQs>
+
+<!-- CallToAction Widget *********** -->
+
+<CallToAction
+  id="contact"
+  title="Ready to Elevate Your Social Media?"
+  subtitle="Let’s work together to create a powerful social media presence that engages your audience, drives traffic, and grows your business. Contact us today to get started!"
+>
+</CallToAction>
+</Layout>

@@ -1,0 +1,272 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+
+import Hero2 from '~/components/widgets/Hero2.astro';
+import Features from '~/components/widgets/Features.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+import Content from '~/components/widgets/Content.astro';
+
+import FAQs from '~/components/widgets/FAQs.astro';
+
+const metadata = {
+  title: 'Custome Software',
+};
+---
+
+<Layout metadata={metadata}>
+<!-- Hero2 Widget ******************* -->
+
+<Hero2
+  tagline="Custom Software Development Services"
+  actions={[
+    { variant: 'primary', target: '_blank', text: 'Contact Us', href: '/contact' },
+  ]}
+  image={{
+    src: 'https://images.unsplash.com/photo-1580481072645-022f9a6dbf27?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
+    alt: 'Custom Software Development Hero Image',
+  }}
+>
+  <Fragment slot="title">
+    Build Tailored Solutions with <span class="text-accent dark:text-white highlight">Custom Software Development</span>: <br /> Streamline Operations and Drive Growth<br />
+  </Fragment>
+
+  <Fragment slot="subtitle">
+    <span class="hidden sm:inline">
+      Our custom software development services are designed to help businesses create powerful, scalable solutions that meet their unique needs.</span
+    >
+    From concept to deployment, we handle every step of the process to ensure your software delivers results.
+  </Fragment>
+</Hero2>
+
+<!-- Features Widget *************** -->
+
+<Features
+  id="features"
+  title="Why Choose Our Custom Software Development Services?"
+  subtitle="We create custom software solutions that are not only functional but also scalable, secure, and user-friendly. Here’s what sets us apart:"
+  columns={2}
+  items={[
+    {
+      title: 'Tailored Solutions',
+      description:
+        'We design and develop software tailored to your business needs, ensuring it aligns with your goals and processes.',
+      icon: 'tabler:tools',
+    },
+    {
+      title: 'Scalable Architecture',
+      description:
+        'We build software with scalability in mind, allowing it to grow with your business and adapt to changing needs.',
+      icon: 'tabler:growth',
+    },
+    {
+      title: 'User-Centric Design',
+      description:
+        'We focus on creating intuitive, user-friendly interfaces that enhance productivity and user satisfaction.',
+      icon: 'tabler:user',
+    },
+    {
+      title: 'Robust Security',
+      description:
+        'We prioritize security, ensuring your software is protected against threats and vulnerabilities.',
+      icon: 'tabler:lock',
+    },
+    {
+      title: 'Agile Development',
+      description:
+        'We use agile methodologies to deliver high-quality software quickly and efficiently.',
+      icon: 'tabler:refresh',
+    },
+    {
+      title: 'Ongoing Support',
+      description:
+        'We provide continuous support and updates to keep your software running smoothly and up-to-date.',
+      icon: 'tabler:headset',
+    },
+  ]}
+/>
+
+<!-- Content Widget **************** -->
+
+<Content
+  title="Use Cases"
+  subtitle="Discover how our custom software development services can help businesses across industries achieve their goals."
+  isReversed
+  items={[
+    {
+      title: 'Enterprise Solutions:',
+      description:
+        'Develop custom software to streamline internal processes, improve efficiency, and enhance collaboration across your organization.',
+    },
+    {
+      title: 'CRM & ERP Systems:',
+      description:
+        'Create tailored CRM and ERP systems to manage customer relationships, streamline operations, and drive business growth.',
+    },
+    {
+      title: 'E-commerce Platforms:',
+      description:
+        'Build custom e-commerce platforms that deliver seamless shopping experiences and drive sales.',
+    },
+    {
+      title: 'Data Management Tools:',
+      description:
+        'Develop software to manage, analyze, and visualize data, helping you make informed business decisions.',
+    },
+  ]}
+  image={{
+    src: 'https://images.unsplash.com/photo-1620558138198-cfb9b4f3c294?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1671&q=80',
+    alt: 'Custom Software Use Cases Image',
+  }}
+>
+  <Fragment slot="content">
+    <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">
+      Custom Software Success Stories: <br /><span class="text-2xl">Driving Results Across Industries</span>
+    </h3>
+  </Fragment>
+
+  <Fragment slot="bg">
+    <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+  </Fragment>
+</Content>
+
+<!-- Content Widget **************** -->
+
+<Content
+  isAfterContent={true}
+  items={[
+    {
+      title: 'Description:',
+      description:
+        'Our custom software development services are designed to help businesses create powerful, scalable solutions that meet their unique needs. From concept to deployment, we handle every step of the process to ensure your software delivers results.',
+    },
+    {
+      title: 'Benefits:',
+      description:
+        'Create unique, tailored solutions that align with your business goals. <br /> Build scalable software that grows with your business. <br /> Enhance productivity with user-friendly designs. <br /> Ensure robust security to protect your data. <br /> Deliver high-quality software quickly with agile development. <br /> Keep your software running smoothly with ongoing support.',
+    },
+  ]}
+  image={{
+    src: 'https://images.unsplash.com/photo-1531973486364-5fa64260d75b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1658&q=80',
+    alt: 'Custom Software Benefits Image',
+  }}
+>
+  <Fragment slot="content">
+    <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">
+      Custom Software Benefits: <br /><span class="text-2xl">Maximizing Your Business Potential</span>
+    </h3>
+  </Fragment>
+
+  <Fragment slot="bg">
+    <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+  </Fragment>
+</Content>
+
+<!-- Content Widget **************** -->
+
+<Content
+  isReversed
+  isAfterContent={true}
+  items={[
+    {
+      title: 'Description:',
+      description:
+        'Our custom software development services are tailored to meet the needs of businesses of all sizes. From startups to large enterprises, we create solutions that drive results and grow your business.',
+    },
+    {
+      title: 'Benefits:',
+      description:
+        'Custom solutions tailored to your business goals. <br /> Scalable architecture for future growth. <br /> User-friendly designs for enhanced productivity. <br /> Robust security to protect your data. <br /> Agile development for quick delivery. <br /> Ongoing support to keep your software running smoothly.',
+    },
+  ]}
+  image={{
+    src: 'https://images.unsplash.com/photo-1635070041078-e363dbe005cb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
+    alt: 'Custom Software Campaigns Image',
+  }}
+>
+  <Fragment slot="content">
+    <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">
+      Custom Software Campaigns: <br /><span class="text-2xl">Driving Results for Businesses</span>
+    </h3>
+  </Fragment>
+
+  <Fragment slot="bg">
+    <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+  </Fragment>
+</Content>
+
+<!-- Content Widget **************** -->
+
+<Content
+  items={[
+    {
+      title: 'Description:',
+      description:
+        'Our custom software development services are tailored to help small businesses compete in the digital marketplace. We create cost-effective, high-quality solutions that drive efficiency and maximize your return on investment.',
+    },
+    {
+      title: 'Benefits:',
+      description:
+        'Affordable solutions for small businesses. <br /> Professional software that builds trust and credibility. <br /> User-friendly designs for better productivity. <br /> Scalable solutions for future growth. <br /> Ongoing support to keep your software up-to-date.',
+    },
+  ]}
+  image={{
+    src: 'https://images.unsplash.com/photo-1514621166532-aa7eb1a3a2f4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80',
+    alt: 'Small Business Custom Software Image',
+  }}
+>
+  <Fragment slot="content">
+    <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">
+      Small Business Custom Software: <br /><span class="text-2xl">Driving Growth with Professional Development</span>
+    </h3>
+  </Fragment>
+
+  <Fragment slot="bg">
+    <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+  </Fragment>
+</Content>
+
+<!-- FAQs Widget ******************* -->
+
+<FAQs
+  title="Frequently Asked Questions"
+  items={[
+    {
+      title: 'What industries do you serve?',
+      description:
+        'We serve businesses across various industries, including healthcare, finance, retail, education, and more. Our solutions are tailored to meet the unique needs of each industry.',
+      icon: 'tabler:chevrons-right',
+    },
+    {
+      title: 'How long does it take to develop custom software?',
+      description:
+        'The timeline depends on the complexity of the project. A simple solution can take 2-4 months, while more complex projects may take 6-12 months or longer. We’ll provide a detailed timeline during the planning phase.',
+      icon: 'tabler:chevrons-right',
+    },
+    {
+      title: 'Do you provide ongoing support?',
+      description:
+        'Yes, we offer ongoing support and maintenance to ensure your software stays up-to-date and performs at its best.',
+      icon: 'tabler:chevrons-right',
+    },
+    {
+      title: 'Can you integrate with existing systems?',
+      description:
+        'Absolutely! We ensure seamless integration with your existing systems to streamline operations and enhance efficiency.',
+      icon: 'tabler:chevrons-right',
+    },
+  ]}
+>
+  <Fragment slot="bg">
+    <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+  </Fragment>
+</FAQs>
+
+<!-- CallToAction Widget *********** -->
+
+<CallToAction
+  id="contact"
+  title="Ready to Build Your Custom Software?"
+  subtitle="Let’s work together to create a powerful, tailored solution that streamlines operations, drives efficiency, and grows your business. Contact us today to get started!"
+>
+</CallToAction>
+</Layout>
