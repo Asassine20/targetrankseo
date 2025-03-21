@@ -96,7 +96,7 @@ export const headerData = {
       href: getBlogPermalink()
     }
   ],
-  actions: [{ text: 'Contact', href: '/contact' }],
+  actions: [{ text: 'Contact Us', href: '/contact' }],
 };
 
 export const footerData = {
