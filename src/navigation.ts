@@ -52,10 +52,14 @@ export const headerData = {
         },
       ],
     },
+    
+    /*
     {
       text: 'Case Studies',
       href: '#',
     },
+    */
+
     /*
     {
       text: 'Landing Pages',
