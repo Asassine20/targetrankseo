@@ -92,12 +92,12 @@ export const headerData = {
     },
     */
 
-    /*
+    
     {
       text: 'Blog',
       href: getBlogPermalink()
     }
-  */
+  
 
   ],
   actions: [{ text: 'Contact Us', href: '/contact' }],
@@ -122,7 +122,7 @@ export const footerData = {
       title: 'Company',
       links: [
         { text: 'About Us', href: '/about-us' },
-        /*{ text: 'Blog', href: '/blog' },*/
+        { text: 'Blog', href: '/blog' },
         { text: 'Pricing', href: '/pricing' },
         { text: 'Testimonials', href: '/testimonials' },
         /*{ text: 'Case Studies', href: '#' },*/
