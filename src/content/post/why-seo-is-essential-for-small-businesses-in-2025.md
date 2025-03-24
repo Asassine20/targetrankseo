@@ -2,8 +2,7 @@
 title: Why SEO is Essential for Small Businesses in 2025
 excerpt: The Power of SEO
 category: SEO
-image: src/assets/images/2.jpeg
-publishDate: ""
+image: https://khnxrwqpws.ufs.sh/f/ZfzyDSYoDactWlMuvjgYvKzwanM05xA21GyrHXZu68FTeVUs
 author: TargetRankSEO
 ---
 **Why SEO is Essential for Small Businesses in 2025**
