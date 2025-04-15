@@ -1,0 +1,88 @@
+---
+// src/components/widgets/GoogleTrendsTool.astro
+const { title = "Google Trends Keyword Tool", subtitle = "Discover trending keywords in your niche" } = Astro.props;
+---
+
+<div class="px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">
+  <div class="max-w-xl mb-10 md:mx-auto sm:text-center lg:max-w-2xl md:mb-12">
+    <h2 class="max-w-lg mb-6 font-sans text-3xl font-bold leading-none tracking-tight text-gray-900 dark:text-white sm:text-4xl md:mx-auto">
+      {title}
+    </h2>
+    <p class="text-base text-gray-700 dark:text-gray-300 md:text-lg">
+      {subtitle}
+    </p>
+  </div>
+
+  <div class="mx-auto sm:text-center">
+    <form id="trends-form" class="mb-8">
+      <div class="flex flex-col md:flex-row gap-4 justify-center">
+        <input
+          type="text"
+          id="keyword"
+          placeholder="Enter a keyword (e.g., 'SEO')"
+          class="flex-grow px-4 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-700 dark:border-gray-600"
+          required
+        />
+        <button
+          type="submit"
+          class="px-6 py-2 font-medium bg-blue-600 hover:bg-blue-700 text-white rounded-lg transition-colors"
+        >
+          Analyze Trends
+        </button>
+      </div>
+    </form>
+
+    <div id="trends-results" class="text-left">
+      <!-- Initial placeholder -->
+      <div class="bg-gray-50 dark:bg-gray-800 rounded-lg p-8 text-center">
+        <p class="text-gray-500 dark:text-gray-400">Enter a keyword above to see trends</p>
+      </div>
+    </div>
+  </div>
+
+  <script is:inline>
+    document.getElementById('trends-form').addEventListener('submit', (e) => {
+      e.preventDefault();
+      const keyword = document.getElementById('keyword').value.trim();
+      const resultsDiv = document.getElementById('trends-results');
+      
+      if (!keyword) return;
+      
+      // Show loading state
+      resultsDiv.innerHTML = `
+        <div class="text-center py-4">
+          <svg class="animate-spin h-5 w-5 text-blue-500 mx-auto" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+            <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+            <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+          </svg>
+          <p class="mt-2">Loading trends data...</p>
+        </div>
+      `;
+
+      // Use Google's official embed iframe (most reliable method)
+      setTimeout(() => {
+        resultsDiv.innerHTML = `
+          <div class="mt-4">
+            <iframe 
+              src="https://trends.google.com:443/trends/embed/explore/TIMESERIES?req=${encodeURIComponent(JSON.stringify({
+                comparisonItem: [{keyword, geo:"US", time:"today 12-m"}],
+                category: 0,
+                property: ""
+              }))}&tz=-240&eq=geo=US"
+              width="100%"
+              height="450"
+              frameborder="0"
+              style="border: 1px solid #e5e7eb; border-radius: 0.5rem;"
+              loading="lazy"
+            ></iframe>
+            <div class="mt-4 text-center">
+              <button onclick="window.location.reload()" class="px-4 py-2 text-sm bg-gray-100 hover:bg-gray-200 dark:bg-gray-700 dark:hover:bg-gray-600 rounded-lg">
+                Analyze Another Keyword
+              </button>
+            </div>
+          </div>
+        `;
+      }, 500);
+    });
+  </script>
+</div>

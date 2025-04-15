@@ -1,0 +1,110 @@
+---
+import CallToAction from '~/components/widgets/CallToAction.astro';
+import Content from '~/components/widgets/Content.astro';
+import Features2 from '~/components/widgets/Features2.astro';
+import Hero from '~/components/widgets/Hero.astro';
+import Testimonials from '~/components/widgets/Testimonials.astro';
+import Layout from '~/layouts/PageLayout.astro';
+import GoogleTrendsTool from '~/components/widgets/GoogleTrendsTool.astro';
+
+const metadata = {
+  title: 'Free Google Trends Keyword Tool | Analyze Search Trends',
+  description: 'Our free Google Trends analyzer helps you discover trending keywords for SEO, content marketing, and competitive research. No signup required.',
+};
+---
+
+<Layout metadata={metadata}>
+<!-- Hero Widget ******************* -->
+<Hero
+  tagline="Free SEO Tool"
+  title="Google Trends Keyword Analyzer"
+  subtitle="Discover what the world is searching for in real-time. Perfect for content creators, marketers, and SEO professionals. <br> Enter any keyword below to see its search volume trends over the past 12 months."
+/>
+
+<!-- Google Trends Tool Widget ***** -->
+<GoogleTrendsTool 
+  id="trends-tool"
+  subtitle=""
+/>
+
+<!-- Features Widget *************** -->
+<Features2
+  title="How This Tool Helps Your SEO Strategy"
+  subtitle="Our free Google Trends analyzer provides actionable insights to:"
+  columns={3}
+  items={[
+    {
+      title: 'Content Planning',
+      description: 'Identify rising trends to create timely, relevant content.',
+      icon: 'tabler:calendar',
+    },
+    {
+      title: 'Keyword Research',
+      description: 'Compare search interest for multiple keywords.',
+      icon: 'tabler:search',
+    },
+    {
+      title: 'Seasonal Trends',
+      description: 'Spot seasonal patterns to optimize publishing schedules.',
+    },
+    {
+      title: 'Competitor Analysis',
+      description: 'See what topics competitors are ranking for.',
+      icon: 'tabler:shield',
+    },
+    {
+      title: 'Regional Insights',
+      description: 'Discover geographic interest variations.',
+      icon: 'tabler:map-pin',
+    },
+    {
+      title: 'Ad Campaign Timing',
+      description: 'Launch PPC when search interest peaks.',
+      icon: 'tabler:rocket',
+    },
+  ]}
+/>
+
+<!-- Content Widget **************** -->
+<Content
+  isReversed
+  items={[
+    {
+      title: 'Why Trend Analysis Matters',
+      description: 'Google Trends data helps you anticipate market shifts before competitors, ensuring your content stays relevant.',
+      icon: 'tabler:bulb',
+    },
+    {
+      title: 'Pro Tip',
+      description: 'Combine this tool with our <a href="/seo-services" class="text-blue-600 dark:text-blue-400">SEO services</a> for maximum impact on your rankings.',
+      icon: 'tabler:star',
+    },
+  ]}
+  image={{
+    src: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80',
+    alt: 'SEO data analysis',
+  }}
+>
+  <Fragment slot="content">
+    <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Maximize Your SEO Potential</h3>
+  </Fragment>
+</Content>
+
+<!-- CallToAction Widget *********** -->
+<CallToAction
+  title="Want Professional Trend Analysis?"
+  subtitle="Our SEO experts can turn these insights into a customized growth strategy."
+  actions={[
+    {
+      variant: 'primary',
+      text: 'Get a Free SEO Audit',
+      href: '/free-seo-audit'
+    },
+    {
+      variant: 'outline',
+      text: 'See All Tools',
+      href: '/seo-tools'
+    }
+  ]}
+/>
+</Layout>

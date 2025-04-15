@@ -36,6 +36,15 @@ export const headerData = {
       ],
     },
     {
+      text: 'Tools',
+      links: [
+        {
+          text: 'Google Trends Analyzer',
+          href: getPermalink('/tools/google-trends'),
+        },
+      ],
+    },
+    {
       text: 'Resources',
       links: [
         {
