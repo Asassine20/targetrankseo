@@ -6,7 +6,8 @@ import Layout from '~/layouts/PageLayout.astro';
 
 const metadata = {
   title: 'Free Meta Tag Analyzer | SEO Tag Checker Tool',
-  description: 'Instantly analyze any webpage\'s meta tags, headings, and content structure. Perfect for competitive SEO research.',
+  description:
+    "Instantly analyze any webpage's meta tags, headings, and content structure. Perfect for competitive SEO research.",
 };
 ---
 
@@ -51,7 +52,9 @@ const metadata = {
             <li>See all meta tags and heading structure</li>
             <li>Get automatic SEO recommendations</li>
           </ol>
-          <p class="mt-4 text-gray-500 dark:text-gray-400">Example URLs to try: your competitor's homepage, your latest blog post, or any webpage you want to analyze.</p>
+          <p class="mt-4 text-gray-500 dark:text-gray-400">
+            Example URLs to try: your competitor's homepage, your latest blog post, or any webpage you want to analyze.
+          </p>
         </div>
       </div>
     </div>
@@ -62,127 +65,185 @@ const metadata = {
       const form = document.getElementById('meta-analyzer-form');
       const results = document.getElementById('meta-results');
       const errorBox = document.getElementById('error-message');
-      
+      const urlInput = document.getElementById('page-url');
+    
+      // List of fallback proxy servers
+      const proxyServers = [
+        'https://api.allorigins.win/raw?url=',
+        'https://cors-anywhere.herokuapp.com/',
+        'https://thingproxy.freeboard.io/fetch/',
+        'https://yacdn.org/proxy/'
+      ];
+    
       form.addEventListener('submit', async (e) => {
         e.preventDefault();
         errorBox.textContent = '';
+        const url = urlInput.value.trim();
         
-        const url = document.getElementById('page-url').value.trim();
-        if (!url) return;
-        
-        // Add https:// if missing
+        if (!url) {
+          errorBox.textContent = 'Please enter a URL';
+          return;
+        }
+    
+        // Validate URL format
+        try {
+          new URL(url.startsWith('http') ? url : `https://${url}`);
+        } catch {
+          errorBox.textContent = 'Please enter a valid URL (include http:// or https://)';
+          return;
+        }
+    
         const fullUrl = url.startsWith('http') ? url : `https://${url}`;
         
+        showLoadingState();
+        
         try {
-          results.innerHTML = `
-            <div class="text-center py-4">
-              <svg class="animate-spin h-5 w-5 text-blue-500 mx-auto" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-                <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
-                <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
-              </svg>
-              <p class="mt-2">Analyzing page structure...</p>
-              <p class="text-sm text-gray-500 dark:text-gray-400 mt-1">Note: We never store the pages you analyze</p>
-            </div>
-          `;
+          const htmlContent = await fetchWithProxies(fullUrl);
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(htmlContent, 'text/html');
           
-          // Use CORS proxy to bypass restrictions (client-side only)
-          const proxyUrl = 'https://api.allorigins.win/get?url=' + encodeURIComponent(fullUrl);
-          const response = await fetch(proxyUrl);
-          const data = await response.json();
-          
-          if (data.contents) {
-            const parser = new DOMParser();
-            const htmlDoc = parser.parseFromString(data.contents, 'text/html');
-            analyzePage(htmlDoc, fullUrl);
-          } else {
-            throw new Error('Could not fetch page');
+          // Basic validation that we got HTML
+          if (!htmlDoc.querySelector('body')) {
+            throw new Error('The URL did not return valid HTML content');
           }
+          
+          analyzePage(htmlDoc, fullUrl);
         } catch (err) {
-          errorBox.textContent = 'Error: ' + err.message;
-          results.innerHTML = `
-            <div class="bg-gray-50 dark:bg-gray-800 rounded-lg p-8 text-center">
-              <p class="text-gray-500 dark:text-gray-400">Enter a URL to analyze its meta tags and headings</p>
-            </div>
-          `;
+          console.error('Analysis error:', err);
+          showErrorState(err.message || 'Failed to analyze the page');
         }
       });
-      
+    
+      async function fetchWithProxies(url, attempt = 0) {
+        try {
+          const proxyUrl = proxyServers[attempt] + encodeURIComponent(url);
+          console.log(`Trying proxy: ${proxyServers[attempt]}`);
+          
+          const response = await fetch(proxyUrl, {
+            headers: { 'Accept': 'text/html' },
+            signal: AbortSignal.timeout(8000) // 8 second timeout
+          });
+    
+          if (!response.ok) {
+            throw new Error(`Proxy server error: ${response.status}`);
+          }
+    
+          // Handle different proxy response formats
+          if (proxyServers[attempt].includes('allorigins.win')) {
+            const data = await response.json();
+            return data.contents || data.response || data;
+          } else {
+            return await response.text();
+          }
+        } catch (err) {
+          if (attempt < proxyServers.length - 1) {
+            console.log(`Proxy failed, trying next one: ${err.message}`);
+            return fetchWithProxies(url, attempt + 1);
+          }
+          throw new Error(`All proxies failed. Last error: ${err.message}`);
+        }
+      }
+    
+      function showLoadingState() {
+        results.innerHTML = `
+          <div class="text-center py-4">
+            <svg class="animate-spin h-5 w-5 text-blue-500 mx-auto" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+              <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+              <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+            </svg>
+            <p class="mt-2">Analyzing page structure...</p>
+            <p class="text-sm text-gray-500 dark:text-gray-400 mt-1">Note: We never store the pages you analyze</p>
+          </div>
+        `;
+      }
+    
+      function showErrorState(message) {
+        errorBox.textContent = `Error: ${message}`;
+        results.innerHTML = `
+          <div class="bg-gray-50 dark:bg-gray-800 rounded-lg p-8 text-center">
+            <p class="text-red-500 dark:text-red-400 mb-2">${message}</p>
+            <p class="text-gray-500 dark:text-gray-400">Try another URL or come back later</p>
+          </div>
+        `;
+      }
+    
       function analyzePage(doc, originalUrl) {
         // Extract meta tags
-        const metaTags = Array.from(doc.querySelectorAll('meta')).map(meta => {
-          return {
+        const metaTags = Array.from(doc.querySelectorAll('meta'))
+          .map((meta) => ({
             name: meta.getAttribute('name') || meta.getAttribute('property') || meta.getAttribute('itemprop'),
             content: meta.getAttribute('content')
-          };
-        }).filter(tag => tag.name && tag.content);
-        
+          }))
+          .filter(tag => tag.name && tag.content);
+    
         // Extract headings
-        const headings = Array.from(doc.querySelectorAll('h1, h2, h3, h4, h5, h6')).map(heading => {
-          return {
-            level: heading.tagName,
-            text: heading.textContent.trim(),
-            length: heading.textContent.trim().length
-          };
-        });
-        
+        const headings = Array.from(doc.querySelectorAll('h1, h2, h3, h4, h5, h6')).map((heading) => ({
+          level: heading.tagName,
+          text: heading.textContent.trim(),
+          length: heading.textContent.trim().length
+        }));
+    
         // Calculate word count
         const bodyText = doc.body?.textContent || '';
         const wordCount = bodyText.trim().split(/\s+/).filter(Boolean).length;
-        
-        // Build results HTML
+    
+        // Build results HTML (same as your original, but with added null checks)
         let html = `
           <div class="space-y-6">
             <div class="bg-white dark:bg-gray-800 rounded-lg shadow p-6">
               <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-4">Analysis of <a href="${originalUrl}" target="_blank" rel="noopener" class="text-blue-600 hover:underline dark:text-blue-400">${originalUrl}</a></h3>
               
+              <!-- Meta Tags Section -->
               <div class="mb-6">
-  <h4 class="text-lg font-semibold text-gray-900 dark:text-white mb-3">🔍 Meta Tags Found (${metaTags.length})</h4>
-  <div class="grid gap-3">
-    ${metaTags.map(tag => `
-      <div class="bg-gray-50 dark:bg-gray-700 p-3 rounded-lg border-l-4 border-blue-500 overflow-hidden">
-        <p class="font-medium text-blue-600 dark:text-blue-400 break-words">${tag.name}:</p>
-        <div class="mt-1 p-2 bg-white/50 dark:bg-gray-600/20 rounded">
-          <p class="text-gray-700 dark:text-gray-300 whitespace-pre-wrap break-words font-mono text-sm">${tag.content}</p>
-        </div>
-        <p class="text-xs text-gray-500 dark:text-gray-400 mt-1">${tag.content.length} characters</p>
-      </div>
-    `).join('')}
-  </div>
-</div>
+                <h4 class="text-lg font-semibold text-gray-900 dark:text-white mb-3">🔍 Meta Tags Found (${metaTags.length})</h4>
+                <div class="grid gap-3">
+                  ${metaTags.map(tag => `
+                    <div class="bg-gray-50 dark:bg-gray-700 p-3 rounded-lg border-l-4 border-blue-500 overflow-hidden">
+                      <p class="font-medium text-blue-600 dark:text-blue-400 break-words">${tag.name}:</p>
+                      <div class="mt-1 p-2 bg-white/50 dark:bg-gray-600/20 rounded">
+                        <p class="text-gray-700 dark:text-gray-300 whitespace-pre-wrap break-words font-mono text-sm">${tag.content || 'Not found'}</p>
+                      </div>
+                      <p class="text-xs text-gray-500 dark:text-gray-400 mt-1">${tag.content?.length || 0} characters</p>
+                    </div>
+                  `).join('')}
+                </div>
+              </div>
               
+              <!-- Headings Section -->
               <div class="mb-6">
-  <h4 class="text-lg font-semibold text-gray-900 dark:text-white mb-3">📝 Heading Structure (${headings.length})</h4>
-  <div class="space-y-1">
-    ${headings.map(heading => {
-      const indentLevel = parseInt(heading.level.substring(1)) - 1;
-      const indentClass = `ml-${indentLevel * 4}`;
-      const borderColors = {
-        'H1': 'border-blue-500',
-        'H2': 'border-blue-400',
-        'H3': 'border-blue-300',
-        'H4': 'border-blue-200',
-        'H5': 'border-blue-100',
-        'H6': 'border-blue-50'
-      };
-      return `
-        <div class="${indentClass} bg-gray-50 dark:bg-gray-700 p-2 rounded-lg border-l-4 ${borderColors[heading.level] || 'border-blue-300'}">
-          <div class="flex items-center gap-2">
-            <span class="font-mono text-xs font-bold px-1.5 py-0.5 rounded bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-100">
-              ${heading.level}
-            </span>
-            <span class="text-gray-700 dark:text-gray-300">
-              ${heading.text.length > 60 ? heading.text.substring(0, 60) + '...' : heading.text}
-            </span>
-            <span class="ml-auto text-xs text-gray-500 dark:text-gray-400">
-              ${heading.length} chars
-            </span>
-          </div>
-        </div>
-      `;
-    }).join('')}
-  </div>
-</div>
+                <h4 class="text-lg font-semibold text-gray-900 dark:text-white mb-3">📝 Heading Structure (${headings.length})</h4>
+                <div class="space-y-1">
+                  ${headings.map(heading => {
+                    const indentLevel = parseInt(heading.level.substring(1)) - 1;
+                    const indentClass = `ml-${indentLevel * 4}`;
+                    const borderColors = {
+                      'H1': 'border-blue-500',
+                      'H2': 'border-blue-400',
+                      'H3': 'border-blue-300',
+                      'H4': 'border-blue-200',
+                      'H5': 'border-blue-100',
+                      'H6': 'border-blue-50'
+                    };
+                    return `
+                      <div class="${indentClass} bg-gray-50 dark:bg-gray-700 p-2 rounded-lg border-l-4 ${borderColors[heading.level] || 'border-blue-300'}">
+                        <div class="flex items-center gap-2">
+                          <span class="font-mono text-xs font-bold px-1.5 py-0.5 rounded bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-100">
+                            ${heading.level}
+                          </span>
+                          <span class="text-gray-700 dark:text-gray-300">
+                            ${heading.text.length > 60 ? heading.text.substring(0, 60) + '...' : heading.text}
+                          </span>
+                          <span class="ml-auto text-xs text-gray-500 dark:text-gray-400">
+                            ${heading.length} chars
+                          </span>
+                        </div>
+                      </div>
+                    `;
+                  }).join('')}
+                </div>
+              </div>
               
+              <!-- Metrics Section -->
               <div>
                 <h4 class="text-lg font-semibold text-gray-900 dark:text-white mb-3">📊 Content Metrics</h4>
                 <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
@@ -202,6 +263,7 @@ const metadata = {
               </div>
             </div>
             
+            <!-- SEO Recommendations -->
             <div class="bg-green-50 dark:bg-green-900/20 p-6 rounded-lg border-l-4 border-green-500">
               <h4 class="text-lg font-semibold text-green-800 dark:text-green-200 mb-3">💡 SEO Recommendations</h4>
               <ul class="space-y-2">
@@ -213,7 +275,7 @@ const metadata = {
         
         results.innerHTML = html;
       }
-      
+    
       function getSEOTips(metaTags, headings, wordCount) {
         const tips = [];
         const hasTitle = metaTags.some(tag => tag.name === 'title');
@@ -233,28 +295,28 @@ const metadata = {
         return tips.map(tip => '<li class="text-green-700 dark:text-green-300">' + tip + '</li>').join('');
       }
     });
-  </script>
+    </script>
 
   <!-- Features -->
   <Features2
     title="Why Analyze Meta Tags?"
     items={[
       {
-        title: "Competitive Research",
-        description: "See what meta tags competitors use for their highest-ranking pages.",
+        title: 'Competitive Research',
+        description: 'See what meta tags competitors use for their highest-ranking pages.',
       },
       {
-        title: "SEO Audits",
-        description: "Quickly check if pages have proper title tags, descriptions, and heading structure.",
+        title: 'SEO Audits',
+        description: 'Quickly check if pages have proper title tags, descriptions, and heading structure.',
       },
       {
-        title: "Content Gaps",
+        title: 'Content Gaps',
         description: "Identify content structure differences between your pages and competitors'.",
       },
       {
-        title: "No Backend Needed",
-        description: "100% client-side tool that works directly in your browser.",
-      }
+        title: 'No Backend Needed',
+        description: '100% client-side tool that works directly in your browser.',
+      },
     ]}
   />
 
