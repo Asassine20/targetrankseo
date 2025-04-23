@@ -1,0 +1,169 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+
+import Hero from '~/components/widgets/Hero.astro';
+import Content from '~/components/widgets/Content.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+import Features3 from '~/components/widgets/Features3.astro';
+import Testimonials from '~/components/widgets/Testimonials.astro';
+import Steps from '~/components/widgets/Steps.astro';
+import BlogLatestPosts from '~/components/widgets/BlogLatestPosts.astro';
+import { getPermalink } from '~/utils/permalinks';
+
+const metadata = {
+  title: 'Top SEO Agency in Michigan | Digital Marketing & Web Design',
+  description: 'Target Rank SEO is a top-rated SEO agency in Michigan. We specialize in SEO, web design, and digital marketing services tailored to help Michigan businesses grow online.',
+  ogTitle: 'SEO Agency Michigan | Web Design & Marketing Experts',
+  ogDescription: 'Work with Michigan\'s leading SEO agency. Expert digital marketing, SEO, and web design services to grow your business online.',
+  ogImage: 'https://khnxrwqpws.ufs.sh/f/ZfzyDSYoDact5BosYPS138pQYmVXJ6D7GSR1Cl2obIriUj0u'
+  };
+---
+
+<Layout metadata={metadata}>
+  <Hero
+    id="hero"
+    title="Michigan SEO Agency"
+    tagline="Digital Marketing & Web Design Expert in Michigan"
+    actions={[{ variant: 'primary', text: 'Get a Free Audit', href: getPermalink('/contact') }]}
+  >
+    <Fragment slot="subtitle">
+      Grow your Michigan business with data-driven SEO strategies, responsive web design, and performance-focused marketing. We help you rank higher, attract more leads, and convert them into customers.
+    </Fragment>
+  </Hero>
+
+  <Content
+    id="about"
+    title="Why Choose Our Michigan SEO Agency"
+    columns={2}
+    image={{
+      src: 'https://khnxrwqpws.ufs.sh/f/ZfzyDSYoDactO87fYAC4WSHteBuPfmpd0MZE1hrbDnVC8cAY',
+      alt: 'Michigan SEO Team',
+      loading: 'eager',
+    }}
+  >
+    <Fragment slot="content">
+      <p>
+        Growing up in Troy, Michigan, it is a blessing that I can now work with businesses around the state. With a background in SEO and web design, and local expertise with the area, I can deliver top tier digital marketing services. With our team of SEO professionals, web designers, and marketing strategists, let us help your Michigan business achieve real results.
+      </p>
+      <br />
+      <ul class="list-disc list-inside">
+        <li>Proven SEO strategies that drive local traffic</li>
+        <li>Custom web design that turns visitors into customers</li>
+        <li>Transparent reporting and measurable results</li>
+        <li>Dedicated support from a Michigan-based team</li>
+      </ul>
+    </Fragment>
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Content>
+
+  <Features3
+    title="Michigan SEO & Marketing Services"
+    subtitle="Everything you need to grow online"
+    columns={3}
+    defaultIcon="tabler:point-filled"
+    items={[
+      {
+        title: 'Local SEO',
+        description: 'Rank higher in Michigan-specific searches and maps listings.',
+      },
+      {
+        title: 'Web Design & Development',
+        description: 'Clean, responsive websites that are SEO-friendly and conversion-optimized.',
+      },
+      {
+        title: 'Google Ads & PPC',
+        description: 'Boost visibility and ROI with expert pay-per-click campaign management.',
+      },
+      {
+        title: 'Content Marketing',
+        description: 'Strategic content to attract and engage your audience.',
+      },
+      {
+        title: 'Technical SEO',
+        description: 'Site speed, mobile optimization, structured data & more.',
+      },
+      {
+        title: 'Analytics & Reporting',
+        description: 'Track performance and gain insight with transparent reports.',
+      },
+    ]}
+  />
+
+  <Steps
+    id="process"
+    title="Our SEO Process"
+    items={[
+      {
+        title: 'Free SEO Audit',
+        description: 'We begin by identifying opportunities and issues in your current SEO setup.',
+        icon: 'tabler:search',
+      },
+      {
+        title: 'Custom Strategy',
+        description: 'We tailor a plan based on your business goals and local competition.',
+        icon: 'tabler:chart-infographic',
+      },
+      {
+        title: 'Implementation',
+        description: 'Our team executes on-page, technical, and off-page SEO tasks.',
+        icon: 'tabler:settings-cog',
+      },
+      {
+        title: 'Measure & Optimize',
+        description: 'We track key metrics and adjust the strategy for continual improvement.',
+        icon: 'tabler:trending-up',
+      },
+    ]}
+  />
+
+  <Testimonials
+    title="What Michigan Businesses Say About Us"
+    testimonials={[
+      {
+        testimonial: `Working with Target Rank SEO has been a game-changer for our online presence. Their SEO strategies have significantly boosted our organic traffic, and their team is always responsive and professional.`,
+        name: 'Rena S.',
+        job: 'Rochester Beauty Bar Medspa Owner',
+        image: {
+          src: 'https://khnxrwqpws.ufs.sh/f/ZfzyDSYoDactMtJwxcIWLOKpy3HmqakQns5l6iJz4D8GuheX',
+          alt: 'Rena S. Image',
+        },
+      },
+      {
+        testimonial: `The custom website they designed for us is stunning and user-friendly. It has helped us convert more leads into customers, and their ongoing support has been invaluable. Highly recommend their services!`,
+        name: 'Emmanuel Y.',
+        job: 'AEY Packaging Owner',
+        image: {
+          src: 'https://khnxrwqpws.ufs.sh/f/ZfzyDSYoDactx6PVLihe3nrWOSw576bIa9MCV420UY1ANuTF',
+          alt: 'Emmanuel Y. Image',
+        },
+      },
+      {
+        testimonial: `Their social media management has transformed our online engagement. Our followers have grown exponentially, and the content they create is always on-brand and impactful. Truly a top-notch team!`,
+        name: 'Andrew S.',
+        job: 'GemTCG Owner',
+        image: {
+          src: 'https://khnxrwqpws.ufs.sh/f/ZfzyDSYoDacthNEMsbeGkyBRe0c2TPpVJUnOFQ3ICbaAL5Yo',
+          alt: 'Andrew S. Image',
+        },
+      },
+    ]}
+  />
+
+  <CallToAction
+    title="Ready to Dominate Local Search?"
+    subtitle="Partner with a Michigan SEO agency that delivers measurable growth."
+    actions={[{ variant: 'primary', text: 'Get Started', href: getPermalink('/contact') }]}
+  />
+
+  <BlogLatestPosts
+    id="blog"
+    title="SEO Tips for Michigan Businesses"
+    information="Stay updated with the latest SEO strategies, local optimization tips, and digital marketing trends tailored for Michigan businesses."
+  >
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </BlogLatestPosts>
+</Layout>
