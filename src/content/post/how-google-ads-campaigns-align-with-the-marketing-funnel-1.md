@@ -3,7 +3,7 @@ title: How Google Ads Campaigns Align With the Marketing Funnel
 excerpt: Sending the right message to the right person at the right time.
 category: PPC
 tags: []
-image: src/assets/images/image.png
+image: src/assets/images/4.jpeg
 publishDate: 2025-04-24T13:51:00.000Z
 author: TargertRankSEO
 ---
